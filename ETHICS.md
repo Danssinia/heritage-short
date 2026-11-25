@@ -10,21 +10,22 @@ put in their mouth, public posting), how (in person / voice note / message), whe
 the evidence is kept (not in this repo if it is private).
 
 ### consent-dad
-- **Person:** my father (shown as an illustrated character; his line in s08 is spoken by a Gemini TTS voice, not a clone of his voice)
-- **Agreed to:** TODO (likeness, the s08 line "ተመልሼ የመጣሁት ይቅርታ ስላላችሁኝ ነው። የምበላው ለእናንተ ብዬ ብቻ ነው!", public posting on TODO platforms)
-- **How / when:** TODO
-- **Evidence kept at:** TODO
+- **Person:** my late father. He has passed away, so consent was given on his behalf by my mother, his wife and closest family member.
+- **Shown as:** an illustrated character (not a photo or realistic likeness). His line in shot s08 is spoken by a prebuilt Gemini TTS voice ("Charon"), not a clone of his voice.
+- **Agreed to (by my mother, on his behalf):** his depiction as an illustrated character; the words put in his mouth in s08, "ተመልሼ የመጣሁት ይቅርታ ስላላችሁኝ ነው። የምበላው ለእናንተ ብዬ ብቻ ነው!" ("I only came back because you said sorry. I'm only eating for you!"), which are the words he really said; and public posting of the film with an AI label.
+- **How / when:** [in person], 25 November 2026, after I explained the story, the AI pictures and voices, and that the film will be public.
+- **Evidence kept at:** a private voice note / message from my mother (not stored in this public repository).
 
 ### consent-mom
-- **Person:** my mother (illustrated character, no voice)
-- **Agreed to:** TODO
-- **How / when:** TODO
-- **Evidence kept at:** TODO
+- **Person:** my mother, shown as an illustrated character; she has no spoken lines.
+- **Agreed to:** her depiction, the story as narrated, and public posting with an AI label.
+- **How / when:** [in person], 25 November 2026.
+- **Evidence kept at:** the same private voice note / message (not stored in this repository).
 
 ### consent-me
-- **Person:** me (illustrated character; narration by a Gemini TTS voice)
-- **Agreed to:** yes (it is my own story)
-- **Date:** TODO
+- **Person:** me, the narrator, shown as an illustrated character; the narration is a prebuilt Gemini TTS voice, not my own voice.
+- **Agreed to:** yes; it is my own story and my own decision to publish it.
+- **Date:** 25 November 2026.
 
 No voice cloning is used: every voice is a prebuilt Gemini voice.
 
