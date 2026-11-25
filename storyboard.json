@@ -38,8 +38,8 @@
     {
       "id": "me",
       "name": "Me (the narrator)",
-      "description": "a young Ethiopian person in their early twenties, short black hair, cheeky smile, wearing a dark green t-shirt",
-      "reference_prompt": "character reference sheet, front view, three-quarter view and profile of a young Ethiopian person in their early twenties, short black hair, cheeky smile, wearing a dark green t-shirt, plain warm background",
+      "description": "a young Ethiopian man in his early twenties, short black hair, cheeky smile, wearing a dark green t-shirt",
+      "reference_prompt": "character reference sheet, front view, three-quarter view and profile of a young Ethiopian man in his early twenties, short black hair, cheeky smile, wearing a dark green t-shirt, plain warm background",
       "seed": 110003,
       "real_person": true,
       "consent_ref": "ETHICS.md#consent-me",
@@ -88,7 +88,7 @@
     },
     "narration": {
       "model": "gemini-3.8-flash-tts",
-      "voices": { "narrator": "Kore", "dad": "Charon" },
+      "voices": { "narrator": "Puck", "dad": "Charon" },
       "style_instruction": "Warm, gently amused storyteller remembering a family moment, unhurried, natural Amharic"
     },
     "music": {
@@ -108,7 +108,7 @@
       "characters": ["dad", "mom", "me"],
       "location": "dining",
       "keyframe": {
-        "prompt": "wide shot of a family of three sitting around the breakfast table, the father at the head of the table in the centre, the mother on the left, the young person on the right, steam rising from tea glasses",
+        "prompt": "wide shot of a family of three sitting around the breakfast table, the father at the head of the table in the centre, the mother on the left, the young man on the right, steam rising from tea glasses",
         "seed": 210001,
         "use_references": true,
         "chosen_candidate": null
@@ -145,7 +145,7 @@
       "characters": ["mom", "me"],
       "location": "dining",
       "keyframe": {
-        "prompt": "medium shot, the mother and the young person lean toward each other at the breakfast table, laughing and whispering mischievously, centred in frame",
+        "prompt": "medium shot, the mother and the young man lean toward each other at the breakfast table, laughing and whispering mischievously, centred in frame",
         "seed": 210002,
         "use_references": true,
         "chosen_candidate": null
@@ -330,7 +330,7 @@
       "characters": ["mom", "me"],
       "location": "dining",
       "keyframe": {
-        "prompt": "medium close-up, the mother and the young person at the table look up toward the doorway with gentle apologetic smiles, centred",
+        "prompt": "medium close-up, the mother and the young man at the table look up toward the doorway with gentle apologetic smiles, centred",
         "seed": 210007,
         "use_references": true,
         "chosen_candidate": null

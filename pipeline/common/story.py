@@ -27,7 +27,7 @@ def keyframe_prompt(sb: dict, shot: dict) -> str:
     parts = [shot["keyframe"]["prompt"].rstrip(".") + "."]
     chars = [subs[c] for c in shot["characters"]]
     if chars:
-        names = {"dad": "The father", "mom": "The mother", "me": "The young person"}
+        names = {"dad": "The father", "mom": "The mother", "me": "The young man"}
         desc = "; ".join(f"{names.get(c['id'], c['name'])} is {c['description']}" for c in chars)
         parts.append(f"Characters: {desc}.")
     parts.append(f"Setting: {subs[shot['location']]['description']}.")
