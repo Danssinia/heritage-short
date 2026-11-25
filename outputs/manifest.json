@@ -1,0 +1,183 @@
+{
+  "mix:radio": {
+    "hash": "940129e215e270eb",
+    "paths": [
+      "outputs/cuts/audio/radio_mix.wav",
+      "outputs/cuts/audio/radio_mix.json"
+    ],
+    "updated": "2026-11-25T17:36:53+00:00"
+  },
+  "narration:s01": {
+    "hash": "abf61777b3e673f0",
+    "paths": [
+      "outputs/narration/s01.wav"
+    ],
+    "updated": "2026-11-25T17:20:03+00:00"
+  },
+  "narration:s01:l0": {
+    "hash": "88dbba493da56d7c",
+    "meta": {
+      "speaker": "narrator",
+      "voice": "Puck"
+    },
+    "paths": [
+      "outputs/narration/s01_l0.wav"
+    ],
+    "updated": "2026-11-25T17:20:03+00:00"
+  },
+  "narration:s02": {
+    "hash": "9f4d35ac5ab5b716",
+    "paths": [
+      "outputs/narration/s02.wav"
+    ],
+    "updated": "2026-11-25T17:20:09+00:00"
+  },
+  "narration:s02:l0": {
+    "hash": "57411c1a6ad9bd86",
+    "meta": {
+      "speaker": "narrator",
+      "voice": "Puck"
+    },
+    "paths": [
+      "outputs/narration/s02_l0.wav"
+    ],
+    "updated": "2026-11-25T17:20:09+00:00"
+  },
+  "narration:s03": {
+    "hash": "82804306a5ef7d01",
+    "paths": [
+      "outputs/narration/s03.wav"
+    ],
+    "updated": "2026-11-25T17:20:13+00:00"
+  },
+  "narration:s03:l0": {
+    "hash": "2f1fbbe01ce83151",
+    "meta": {
+      "speaker": "narrator",
+      "voice": "Puck"
+    },
+    "paths": [
+      "outputs/narration/s03_l0.wav"
+    ],
+    "updated": "2026-11-25T17:20:13+00:00"
+  },
+  "narration:s04": {
+    "hash": "b1173e039aab6f4f",
+    "paths": [
+      "outputs/narration/s04.wav"
+    ],
+    "updated": "2026-11-25T17:20:17+00:00"
+  },
+  "narration:s04:l0": {
+    "hash": "224679f9775a8ef5",
+    "meta": {
+      "speaker": "narrator",
+      "voice": "Puck"
+    },
+    "paths": [
+      "outputs/narration/s04_l0.wav"
+    ],
+    "updated": "2026-11-25T17:20:17+00:00"
+  },
+  "narration:s05": {
+    "hash": "ac2b6088bb76a54b",
+    "paths": [
+      "outputs/narration/s05.wav"
+    ],
+    "updated": "2026-11-25T17:20:24+00:00"
+  },
+  "narration:s05:l0": {
+    "hash": "c2300a8fbdae6777",
+    "meta": {
+      "speaker": "narrator",
+      "voice": "Puck"
+    },
+    "paths": [
+      "outputs/narration/s05_l0.wav"
+    ],
+    "updated": "2026-11-25T17:20:24+00:00"
+  },
+  "narration:s06": {
+    "hash": "f6063784fd76a544",
+    "paths": [
+      "outputs/narration/s06.wav"
+    ],
+    "updated": "2026-11-25T17:20:28+00:00"
+  },
+  "narration:s06:l0": {
+    "hash": "b65dbda691f57f19",
+    "meta": {
+      "speaker": "narrator",
+      "voice": "Puck"
+    },
+    "paths": [
+      "outputs/narration/s06_l0.wav"
+    ],
+    "updated": "2026-11-25T17:20:28+00:00"
+  },
+  "narration:s07": {
+    "hash": "fb7a5158ef3d78fd",
+    "paths": [
+      "outputs/narration/s07.wav"
+    ],
+    "updated": "2026-11-25T17:35:31+00:00"
+  },
+  "narration:s07:l0": {
+    "hash": "05fc1d24942d5709",
+    "meta": {
+      "speaker": "narrator",
+      "voice": "Puck"
+    },
+    "paths": [
+      "outputs/narration/s07_l0.wav"
+    ],
+    "updated": "2026-11-25T17:35:31+00:00"
+  },
+  "narration:s08": {
+    "hash": "2e442e2c902614b3",
+    "paths": [
+      "outputs/narration/s08.wav"
+    ],
+    "updated": "2026-11-25T17:36:28+00:00"
+  },
+  "narration:s08:l0": {
+    "hash": "79daa73c13ee8feb",
+    "meta": {
+      "speaker": "narrator",
+      "voice": "Puck"
+    },
+    "paths": [
+      "outputs/narration/s08_l0.wav"
+    ],
+    "updated": "2026-11-25T17:35:49+00:00"
+  },
+  "narration:s08:l1": {
+    "hash": "7ab8ba90a2759b42",
+    "meta": {
+      "speaker": "dad",
+      "voice": "Charon"
+    },
+    "paths": [
+      "outputs/narration/s08_l1.wav"
+    ],
+    "updated": "2026-11-25T17:36:28+00:00"
+  },
+  "narration:s09": {
+    "hash": "e5158975732cd317",
+    "paths": [
+      "outputs/narration/s09.wav"
+    ],
+    "updated": "2026-11-25T17:36:32+00:00"
+  },
+  "narration:s09:l0": {
+    "hash": "fde02104fc0f75a3",
+    "meta": {
+      "speaker": "narrator",
+      "voice": "Puck"
+    },
+    "paths": [
+      "outputs/narration/s09_l0.wav"
+    ],
+    "updated": "2026-11-25T17:36:32+00:00"
+  }
+}

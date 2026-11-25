@@ -54,7 +54,7 @@ def synth_line(sb: dict, shot: dict, i: int, line: dict, manifest: Manifest, for
                  latency_s=t.elapsed, status="ok", cost_usd=tts_cost(usage), cost_note="list price, free tier used",
                  cache_key=h, output=str(raw.relative_to(ROOT)), attempt=attempt, extra={"usage": usage})
 
-    with_retries(call, attempts=4)
+    with_retries(call, attempts=6)
     to_pcm(raw, out, channels=1, extra_filter=TRIM)
     manifest.put(key, h, [out], {"voice": voice, "speaker": line["speaker"]})
     return out, True

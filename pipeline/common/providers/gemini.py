@@ -11,7 +11,9 @@ import base64
 import io
 import json
 import math
+import os
 import random
+import time
 import wave
 
 import requests
@@ -23,18 +25,68 @@ BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 TIMEOUT = 120
 
 
+_last_call = 0.0
+
+
+def _pace() -> None:
+    """Space out calls to stay under the free tier's requests-per-minute limit.
+
+    GEMINI_RPM in .env sets the pace (default 3 per minute = one call every 20 s).
+    """
+    global _last_call
+    rpm = float(os.environ.get("GEMINI_RPM", "3"))
+    gap = 60.0 / rpm if rpm > 0 else 0.0
+    wait = _last_call + gap - time.time()
+    if wait > 0:
+        print(f"    pacing: waiting {wait:.0f}s (GEMINI_RPM={rpm:g})")
+        time.sleep(wait)
+    _last_call = time.time()
+
+
+def _error_info(r: requests.Response) -> tuple[str, float | None, bool]:
+    """Return (short message, seconds Google asks us to wait, is_daily_quota)."""
+    try:
+        err = r.json().get("error", {})
+    except ValueError:
+        return r.text[:300], None, False
+    msg = (err.get("message") or "").split("\n")[0][:200]
+    delay, quota_ids = None, []
+    for d in err.get("details", []) or []:
+        kind = d.get("@type", "")
+        if kind.endswith("RetryInfo") and d.get("retryDelay"):
+            try:
+                delay = float(str(d["retryDelay"]).rstrip("s")) + 1.0
+            except ValueError:
+                pass
+        if kind.endswith("QuotaFailure"):
+            quota_ids += [v.get("quotaId", "") for v in d.get("violations", [])]
+    daily = any("PerDay" in q for q in quota_ids)
+    if quota_ids:
+        msg += f" [quota: {', '.join(q for q in quota_ids if q)}]"
+    return msg, delay, daily
+
+
 def _post(model: str, body: dict) -> dict:
     url = f"{BASE}/{model}:generateContent"
     headers = {"x-goog-api-key": env("GEMINI_API_KEY"), "Content-Type": "application/json"}
+    _pace()
     try:
         r = requests.post(url, headers=headers, json=body, timeout=TIMEOUT)
     except requests.RequestException as e:
-        raise RetryableError(f"network error: {e}") from e
-    if r.status_code == 429 or r.status_code >= 500:
-        ra = r.headers.get("Retry-After")
-        raise RetryableError(f"HTTP {r.status_code}: {r.text[:300]}", float(ra) if ra and ra.isdigit() else None)
+        raise RetryableError(f"network error: {e}", 20.0) from e
+    if r.status_code == 429:
+        msg, delay, daily = _error_info(r)
+        if daily:
+            raise ProviderError(
+                f"HTTP 429, DAILY quota used up for {model}: {msg}. Finished lines are saved; "
+                "run again after the daily reset, or use a key from another Google account/project.")
+        raise RetryableError(f"HTTP 429 (per-minute limit): {msg}", delay or 60.0)
+    if r.status_code >= 500:
+        msg, delay, _ = _error_info(r)
+        raise RetryableError(f"HTTP {r.status_code}: {msg}", delay or 30.0)
     if r.status_code != 200:
-        raise ProviderError(f"HTTP {r.status_code}: {r.text[:500]}")
+        msg, _, _ = _error_info(r)
+        raise ProviderError(f"HTTP {r.status_code}: {msg}")
     return r.json()
 
 
