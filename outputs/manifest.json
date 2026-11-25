@@ -223,6 +223,105 @@
     ],
     "updated": "2026-11-25T17:36:53+00:00"
   },
+  "music:m01_c0": {
+    "hash": "eb8c868f3fe8919c",
+    "meta": {
+      "gpu": "Tesla T4",
+      "latency_s": 24.7
+    },
+    "paths": [
+      "outputs/music/m01_c0.wav"
+    ],
+    "updated": "2026-11-25T19:55:11+00:00"
+  },
+  "music:m01_c1": {
+    "hash": "ec228cf9df062597",
+    "meta": {
+      "gpu": "Tesla T4",
+      "latency_s": 14.5
+    },
+    "paths": [
+      "outputs/music/m01_c1.wav"
+    ],
+    "updated": "2026-11-25T19:55:11+00:00"
+  },
+  "music:m01_c2": {
+    "hash": "ec6cf9c54f1ff6c4",
+    "meta": {
+      "gpu": "Tesla T4",
+      "latency_s": 12.8
+    },
+    "paths": [
+      "outputs/music/m01_c2.wav"
+    ],
+    "updated": "2026-11-25T19:55:11+00:00"
+  },
+  "music:m02_c0": {
+    "hash": "00b143b5d4f54527",
+    "meta": {
+      "gpu": "Tesla T4",
+      "latency_s": 12.9
+    },
+    "paths": [
+      "outputs/music/m02_c0.wav"
+    ],
+    "updated": "2026-11-25T19:55:11+00:00"
+  },
+  "music:m02_c1": {
+    "hash": "07ec1ffb6008938d",
+    "meta": {
+      "gpu": "Tesla T4",
+      "latency_s": 12.7
+    },
+    "paths": [
+      "outputs/music/m02_c1.wav"
+    ],
+    "updated": "2026-11-25T19:55:11+00:00"
+  },
+  "music:m02_c2": {
+    "hash": "094bd63be42a6e03",
+    "meta": {
+      "gpu": "Tesla T4",
+      "latency_s": 12.5
+    },
+    "paths": [
+      "outputs/music/m02_c2.wav"
+    ],
+    "updated": "2026-11-25T19:55:11+00:00"
+  },
+  "music:m03_c0": {
+    "hash": "d268646ae84723c3",
+    "meta": {
+      "gpu": "Tesla T4",
+      "latency_s": 14.3
+    },
+    "paths": [
+      "outputs/music/m03_c0.wav"
+    ],
+    "updated": "2026-11-25T19:55:11+00:00"
+  },
+  "music:m03_c1": {
+    "hash": "102cab44f0843dea",
+    "meta": {
+      "gpu": "Tesla T4",
+      "latency_s": 14.4
+    },
+    "paths": [
+      "outputs/music/m03_c1.wav"
+    ],
+    "updated": "2026-11-25T19:55:11+00:00"
+  },
+  "music:m03_c2": {
+    "hash": "1c969cf5c885ebfe",
+    "meta": {
+      "gpu": "Tesla T4",
+      "latency_s": 14.3
+    },
+    "paths": [
+      "outputs/music/m03_c2.wav"
+    ],
+    "updated": "2026-11-25T19:55:11+00:00"
+  },
   "narration:s01": {
     "hash": "abf61777b3e673f0",
     "paths": [

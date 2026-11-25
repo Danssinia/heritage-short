@@ -64,7 +64,8 @@ def make_placeholders(sb: dict) -> None:
 
 def build_jobs(sb: dict, manifest: Manifest):
     d = sb["defaults"]["music"]
-    cfg = {"model": d["model"], "dtype": "auto"}
+    # kernel 2 = precision probe + per-take validity check; bumping it re-generates takes made by kernel 1
+    cfg = {"model": d["model"], "dtype": "auto", "kernel": 2}
     items, expected = [], {}
     for cue in sb["music"]["cues"]:
         length = cue_length(sb, cue["id"])
