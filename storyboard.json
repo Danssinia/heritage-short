@@ -114,7 +114,7 @@
         "prompt": "wide shot of a family of three sitting around the breakfast table, the father at the head of the table in the centre, the mother on the left, the young man on the right, steam rising from tea glasses",
         "seed": 210001,
         "use_references": true,
-        "chosen_candidate": null
+        "chosen_candidate": 0
       },
       "motion": {
         "mode": "i2v",
@@ -151,7 +151,7 @@
         "prompt": "medium shot, the mother and the young man lean toward each other at the breakfast table, laughing and whispering mischievously, centred in frame",
         "seed": 210002,
         "use_references": true,
-        "chosen_candidate": null
+        "chosen_candidate": 0
       },
       "motion": {
         "mode": "i2v",
@@ -188,7 +188,7 @@
         "prompt": "close-up of the father at the breakfast table, frowning, annoyed, holding a piece of bread, centred",
         "seed": 210003,
         "use_references": true,
-        "chosen_candidate": null
+        "chosen_candidate": 0
       },
       "motion": {
         "mode": "i2v",
@@ -225,7 +225,7 @@
         "prompt": "close insert of a half-eaten plate of firfir and a glass of tea in front of an empty chair pushed back from the table",
         "seed": 210004,
         "use_references": true,
-        "chosen_candidate": null
+        "chosen_candidate": 1
       },
       "motion": {
         "mode": "i2v",
@@ -262,7 +262,7 @@
         "prompt": "close insert of the father's hands being washed over a metal basin, water pouring from a metal jug, blue shirt cuffs visible",
         "seed": 210005,
         "use_references": true,
-        "chosen_candidate": null
+        "chosen_candidate": 0
       },
       "motion": {
         "mode": "i2v",
@@ -299,7 +299,7 @@
         "prompt": "medium shot of the father standing quietly in the dining room doorway, hands by his sides, looking at the table with a sad face, centred",
         "seed": 210006,
         "use_references": true,
-        "chosen_candidate": null
+        "chosen_candidate": 0
       },
       "motion": {
         "mode": "i2v",
@@ -336,7 +336,7 @@
         "prompt": "medium close-up, the mother and the young man at the table look up toward the doorway with gentle apologetic smiles, centred",
         "seed": 210007,
         "use_references": true,
-        "chosen_candidate": null
+        "chosen_candidate": 0
       },
       "motion": {
         "mode": "i2v",
@@ -373,7 +373,7 @@
         "prompt": "medium shot of the father sitting back down at the breakfast table, laughing warmly, picking up bread again, centred",
         "seed": 210008,
         "use_references": true,
-        "chosen_candidate": null
+        "chosen_candidate": 0
       },
       "motion": {
         "mode": "i2v",
@@ -417,7 +417,7 @@
         "prompt": "wide shot of the family of three laughing together around the breakfast table, the father in the centre, warm golden light",
         "seed": 210009,
         "use_references": true,
-        "chosen_candidate": null
+        "chosen_candidate": 1
       },
       "motion": {
         "mode": "i2v",

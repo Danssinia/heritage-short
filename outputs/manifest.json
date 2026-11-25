@@ -1,4 +1,220 @@
 {
+  "keyframe:s01": {
+    "hash": "69487269b58f339f",
+    "meta": {
+      "candidate": "s01_c0.png"
+    },
+    "paths": [
+      "outputs/keyframes/s01.png"
+    ],
+    "updated": "2026-11-25T19:13:06+00:00"
+  },
+  "keyframe:s01:c0": {
+    "hash": "aae604548a1e67b3",
+    "paths": [
+      "outputs/keyframes/s01_c0.png"
+    ],
+    "updated": "2026-11-25T19:12:53+00:00"
+  },
+  "keyframe:s01:c1": {
+    "hash": "8a6bf9bfa1bd5c4d",
+    "paths": [
+      "outputs/keyframes/s01_c1.png"
+    ],
+    "updated": "2026-11-25T19:13:06+00:00"
+  },
+  "keyframe:s02": {
+    "hash": "303b85bf4290e853",
+    "meta": {
+      "candidate": "s02_c0.png"
+    },
+    "paths": [
+      "outputs/keyframes/s02.png"
+    ],
+    "updated": "2026-11-25T19:13:28+00:00"
+  },
+  "keyframe:s02:c0": {
+    "hash": "ed3cf21e1830982a",
+    "paths": [
+      "outputs/keyframes/s02_c0.png"
+    ],
+    "updated": "2026-11-25T19:13:20+00:00"
+  },
+  "keyframe:s02:c1": {
+    "hash": "b46025639cc59ce7",
+    "paths": [
+      "outputs/keyframes/s02_c1.png"
+    ],
+    "updated": "2026-11-25T19:13:28+00:00"
+  },
+  "keyframe:s03": {
+    "hash": "8ed29ce8a5193e04",
+    "meta": {
+      "candidate": "s03_c0.png"
+    },
+    "paths": [
+      "outputs/keyframes/s03.png"
+    ],
+    "updated": "2026-11-25T19:13:50+00:00"
+  },
+  "keyframe:s03:c0": {
+    "hash": "84bd81ad3489c942",
+    "paths": [
+      "outputs/keyframes/s03_c0.png"
+    ],
+    "updated": "2026-11-25T19:13:39+00:00"
+  },
+  "keyframe:s03:c1": {
+    "hash": "62203c930e111beb",
+    "paths": [
+      "outputs/keyframes/s03_c1.png"
+    ],
+    "updated": "2026-11-25T19:13:50+00:00"
+  },
+  "keyframe:s04": {
+    "hash": "72cec310bc2babb4",
+    "meta": {
+      "candidate": "s04_c1.png"
+    },
+    "paths": [
+      "outputs/keyframes/s04.png"
+    ],
+    "updated": "2026-11-25T19:23:42+00:00"
+  },
+  "keyframe:s04:c0": {
+    "hash": "9bf1efce733ade37",
+    "paths": [
+      "outputs/keyframes/s04_c0.png"
+    ],
+    "updated": "2026-11-25T19:13:57+00:00"
+  },
+  "keyframe:s04:c1": {
+    "hash": "06c2ab1ee206cfc1",
+    "paths": [
+      "outputs/keyframes/s04_c1.png"
+    ],
+    "updated": "2026-11-25T19:14:24+00:00"
+  },
+  "keyframe:s05": {
+    "hash": "19da075cd2bc2503",
+    "meta": {
+      "candidate": "s05_c0.png"
+    },
+    "paths": [
+      "outputs/keyframes/s05.png"
+    ],
+    "updated": "2026-11-25T19:14:39+00:00"
+  },
+  "keyframe:s05:c0": {
+    "hash": "12c71ce25baf8353",
+    "paths": [
+      "outputs/keyframes/s05_c0.png"
+    ],
+    "updated": "2026-11-25T19:14:33+00:00"
+  },
+  "keyframe:s05:c1": {
+    "hash": "8a8550039292810e",
+    "paths": [
+      "outputs/keyframes/s05_c1.png"
+    ],
+    "updated": "2026-11-25T19:14:39+00:00"
+  },
+  "keyframe:s06": {
+    "hash": "454241693240aa3a",
+    "meta": {
+      "candidate": "s06_c0.png"
+    },
+    "paths": [
+      "outputs/keyframes/s06.png"
+    ],
+    "updated": "2026-11-25T19:14:56+00:00"
+  },
+  "keyframe:s06:c0": {
+    "hash": "1294187c4c9738ac",
+    "paths": [
+      "outputs/keyframes/s06_c0.png"
+    ],
+    "updated": "2026-11-25T19:14:47+00:00"
+  },
+  "keyframe:s06:c1": {
+    "hash": "72cadf7f530295c9",
+    "paths": [
+      "outputs/keyframes/s06_c1.png"
+    ],
+    "updated": "2026-11-25T19:14:56+00:00"
+  },
+  "keyframe:s07": {
+    "hash": "36bd2b22ef55b1f9",
+    "meta": {
+      "candidate": "s07_c0.png"
+    },
+    "paths": [
+      "outputs/keyframes/s07.png"
+    ],
+    "updated": "2026-11-25T19:15:14+00:00"
+  },
+  "keyframe:s07:c0": {
+    "hash": "9ea4fe5f2903664c",
+    "paths": [
+      "outputs/keyframes/s07_c0.png"
+    ],
+    "updated": "2026-11-25T19:15:04+00:00"
+  },
+  "keyframe:s07:c1": {
+    "hash": "f4b974c7f130d7e3",
+    "paths": [
+      "outputs/keyframes/s07_c1.png"
+    ],
+    "updated": "2026-11-25T19:15:14+00:00"
+  },
+  "keyframe:s08": {
+    "hash": "21d2cfb607461955",
+    "meta": {
+      "candidate": "s08_c0.png"
+    },
+    "paths": [
+      "outputs/keyframes/s08.png"
+    ],
+    "updated": "2026-11-25T19:16:01+00:00"
+  },
+  "keyframe:s08:c0": {
+    "hash": "cd77d15777d2b683",
+    "paths": [
+      "outputs/keyframes/s08_c0.png"
+    ],
+    "updated": "2026-11-25T19:15:20+00:00"
+  },
+  "keyframe:s08:c1": {
+    "hash": "d81703600b3cc7f3",
+    "paths": [
+      "outputs/keyframes/s08_c1.png"
+    ],
+    "updated": "2026-11-25T19:16:01+00:00"
+  },
+  "keyframe:s09": {
+    "hash": "f0332aa6207ddb8d",
+    "meta": {
+      "candidate": "s09_c1.png"
+    },
+    "paths": [
+      "outputs/keyframes/s09.png"
+    ],
+    "updated": "2026-11-25T19:23:42+00:00"
+  },
+  "keyframe:s09:c0": {
+    "hash": "069cea67aec2a63f",
+    "paths": [
+      "outputs/keyframes/s09_c0.png"
+    ],
+    "updated": "2026-11-25T19:16:14+00:00"
+  },
+  "keyframe:s09:c1": {
+    "hash": "92e0be96b2c73400",
+    "paths": [
+      "outputs/keyframes/s09_c1.png"
+    ],
+    "updated": "2026-11-25T19:16:26+00:00"
+  },
   "mix:radio": {
     "hash": "940129e215e270eb",
     "paths": [
