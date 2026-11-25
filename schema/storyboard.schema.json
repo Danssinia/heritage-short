@@ -1,0 +1,329 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "heritage-short/storyboard.schema.json",
+  "title": "Heritage Short storyboard",
+  "description": "The single contract between every pipeline stage. Structural rules live here; cross-field rules (total runtime, ID references, cue ranges, speakers) are checked in pipeline/validate.py.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "project", "style", "characters", "locations", "defaults", "shots", "music", "mix", "subtitles", "end_card", "exports"],
+  "properties": {
+    "schema_version": { "const": "1.1.0" },
+
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "logline", "audience", "intent", "narration_language", "subtitle_language", "target_duration_s"],
+      "properties": {
+        "title": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "logline": { "type": "string", "minLength": 10, "maxLength": 300 },
+        "audience": { "type": "string", "minLength": 10, "description": "Who watches, and where. Must match DESIGN.md." },
+        "intent": { "type": "string", "minLength": 10, "description": "What the audience should feel or understand at the end." },
+        "narration_language": { "type": "string", "pattern": "^[a-z]{2,3}(-[A-Z]{2})?$", "description": "BCP-47 code: am = Amharic." },
+        "subtitle_language": { "const": "en" },
+        "target_duration_s": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["min", "max"],
+          "properties": {
+            "min": { "type": "number", "minimum": 60 },
+            "max": { "type": "number", "maximum": 90 }
+          }
+        }
+      }
+    },
+
+    "style": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["style_block", "negative_prompt"],
+      "properties": {
+        "style_block": { "type": "string", "minLength": 20, "description": "Appended verbatim to every reference and keyframe prompt to prevent drift." },
+        "negative_prompt": { "type": "string", "description": "Used by Wan 2.2 (FLUX klein ignores negatives)." },
+        "palette": { "type": "array", "items": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" }, "maxItems": 8 }
+      }
+    },
+
+    "characters": { "type": "array", "minItems": 1, "maxItems": 4, "items": { "$ref": "#/$defs/reference_subject" } },
+    "locations": { "type": "array", "minItems": 1, "maxItems": 4, "items": { "$ref": "#/$defs/reference_subject" } },
+
+    "defaults": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["keyframe", "shot", "narration", "music"],
+      "properties": {
+        "keyframe": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["provider", "model", "width", "height", "candidates"],
+          "properties": {
+            "provider": { "const": "cloudflare-workers-ai" },
+            "model": { "type": "string", "pattern": "^@cf/" },
+            "width": { "type": "integer", "minimum": 256, "maximum": 1920, "multipleOf": 16 },
+            "height": { "type": "integer", "minimum": 256, "maximum": 1920, "multipleOf": 16 },
+            "steps": { "type": "integer", "minimum": 1, "maximum": 8, "description": "Only sent to models that accept it (FLUX.1 schnell). FLUX.2 klein is fixed at 4." },
+            "guidance": { "type": "number", "minimum": 0, "maximum": 10 },
+            "candidates": { "type": "integer", "minimum": 1, "maximum": 6 },
+            "reference_candidates": { "type": "integer", "minimum": 1, "maximum": 6, "default": 4 }
+          }
+        },
+        "shot": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["provider", "model", "width", "height", "fps", "steps", "guidance", "dtype", "max_attempts"],
+          "properties": {
+            "provider": { "enum": ["kaggle"] },
+            "model": { "type": "string", "minLength": 3 },
+            "width": { "type": "integer", "multipleOf": 32, "minimum": 256 },
+            "height": { "type": "integer", "multipleOf": 32, "minimum": 256 },
+            "fps": { "const": 24 },
+            "steps": { "type": "integer", "minimum": 4, "maximum": 60 },
+            "guidance": { "type": "number", "minimum": 1, "maximum": 10 },
+            "dtype": { "enum": ["auto", "float16", "bfloat16"], "description": "auto = bfloat16 on Ampere or newer, float16 on T4/P100." },
+            "max_attempts": { "type": "integer", "minimum": 1, "maximum": 5 }
+          }
+        },
+        "narration": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["model", "voices", "style_instruction"],
+          "properties": {
+            "model": { "type": "string", "minLength": 3 },
+            "voices": {
+              "type": "object",
+              "minProperties": 1,
+              "additionalProperties": { "type": "string", "minLength": 1 },
+              "description": "speaker id -> Gemini voice name, e.g. {\"narrator\": \"Kore\", \"dad\": \"Charon\"}."
+            },
+            "style_instruction": { "type": "string", "minLength": 5, "description": "Default delivery note sent as speech_metadata.style (never read aloud)." }
+          }
+        },
+        "music": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["provider", "model", "steps"],
+          "properties": {
+            "provider": { "enum": ["kaggle"] },
+            "model": { "type": "string", "minLength": 3 },
+            "steps": { "type": "integer", "minimum": 4, "maximum": 60 }
+          }
+        }
+      }
+    },
+
+    "shots": { "type": "array", "minItems": 8, "maxItems": 12, "items": { "$ref": "#/$defs/shot" } },
+
+    "music": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cues", "ducking"],
+      "properties": {
+        "cues": { "type": "array", "minItems": 1, "maxItems": 4, "items": { "$ref": "#/$defs/music_cue" } },
+        "ducking": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["threshold", "ratio", "attack_ms", "release_ms"],
+          "properties": {
+            "threshold": { "type": "number", "exclusiveMinimum": 0, "maximum": 1 },
+            "ratio": { "type": "number", "minimum": 1, "maximum": 20 },
+            "attack_ms": { "type": "number", "minimum": 1, "maximum": 2000 },
+            "release_ms": { "type": "number", "minimum": 10, "maximum": 9000 }
+          }
+        }
+      }
+    },
+
+    "mix": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["integrated_lufs", "true_peak_db", "voice_lufs", "music_lufs"],
+      "properties": {
+        "integrated_lufs": { "type": "number", "minimum": -24, "maximum": -9 },
+        "true_peak_db": { "type": "number", "minimum": -3, "maximum": 0 },
+        "voice_lufs": { "type": "number", "minimum": -30, "maximum": -10, "description": "Level each narration track is brought to before mixing." },
+        "music_lufs": { "type": "number", "minimum": -40, "maximum": -10, "description": "Level the score is brought to before ducking." }
+      }
+    },
+
+    "subtitles": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["burn_in", "max_chars_per_line", "max_lines"],
+      "properties": {
+        "burn_in": { "type": "boolean" },
+        "max_chars_per_line": { "type": "integer", "minimum": 20, "maximum": 42 },
+        "max_lines": { "type": "integer", "minimum": 1, "maximum": 2 },
+        "font": { "type": "string" },
+        "vertical_margin_pct": { "type": "number", "minimum": 5, "maximum": 35, "description": "Distance from the bottom edge in the 9:16 export, to stay inside the safe area." }
+      }
+    },
+
+    "end_card": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "duration_s"],
+      "properties": {
+        "text": { "type": "string", "minLength": 5, "pattern": "(?i)\\bAI\\b", "description": "Must say the film was made with AI." },
+        "subtext": { "type": "string", "maxLength": 140 },
+        "duration_s": { "type": "number", "minimum": 2, "maximum": 4 }
+      }
+    },
+
+    "exports": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "aspect", "width", "height"],
+        "properties": {
+          "name": { "type": "string", "pattern": "^[a-z0-9_-]+$" },
+          "aspect": { "enum": ["16:9", "9:16"] },
+          "width": { "type": "integer", "multipleOf": 2 },
+          "height": { "type": "integer", "multipleOf": 2 }
+        }
+      },
+      "allOf": [
+        { "contains": { "properties": { "aspect": { "const": "16:9" } } } },
+        { "contains": { "properties": { "aspect": { "const": "9:16" } } } }
+      ]
+    }
+  },
+
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z][a-z0-9_]{1,31}$" },
+    "seed": { "type": "integer", "minimum": 0, "maximum": 2147483647 },
+
+    "reference_subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "description", "reference_prompt", "seed", "real_person"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "name": { "type": "string", "minLength": 1 },
+        "description": { "type": "string", "minLength": 10, "description": "Fixed wording reused in every prompt that includes this subject." },
+        "reference_prompt": { "type": "string", "minLength": 10 },
+        "seed": { "$ref": "#/$defs/seed" },
+        "real_person": { "type": "boolean" },
+        "consent_ref": { "type": "string", "pattern": "^ETHICS\\.md#[a-z0-9-]+$", "description": "Anchor of the consent record in ETHICS.md." },
+        "approved_candidate": { "type": ["integer", "null"], "minimum": 0, "description": "Index of the approved reference image (the golden reference). null = not chosen yet." }
+      },
+      "if": { "properties": { "real_person": { "const": true } } },
+      "then": { "required": ["consent_ref"] }
+    },
+
+    "line": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["speaker", "text", "subtitle_en"],
+      "properties": {
+        "speaker": { "$ref": "#/$defs/id" },
+        "text": { "type": "string", "minLength": 1, "description": "Spoken line in the narration language. Read verbatim by TTS." },
+        "subtitle_en": { "type": "string", "minLength": 1 },
+        "style": { "type": "string", "description": "Per-line delivery note; overrides defaults.narration.style_instruction." },
+        "pause_after_s": { "type": "number", "minimum": 0, "maximum": 3, "default": 0.35 },
+        "pronunciation_notes": { "type": "string" }
+      }
+    },
+
+    "shot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "beat", "reason", "duration_s", "shot_size", "camera", "characters", "location", "keyframe", "motion", "narration", "transition_in", "reframe_9x16"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^s[0-9]{2}$" },
+        "beat": { "type": "string", "minLength": 3 },
+        "reason": { "type": "string", "minLength": 10, "description": "Why the film needs this shot." },
+        "duration_s": { "type": "number", "minimum": 3, "maximum": 14, "description": "Planned length. The edit extends it if the narration needs longer." },
+        "shot_size": { "enum": ["extreme_wide", "wide", "medium", "medium_close_up", "close_up", "extreme_close_up", "insert"] },
+        "camera": { "enum": ["static", "pan_left", "pan_right", "tilt_up", "tilt_down", "push_in", "pull_out", "orbit", "handheld"] },
+        "characters": { "type": "array", "items": { "$ref": "#/$defs/id" }, "uniqueItems": true, "maxItems": 3 },
+        "location": { "$ref": "#/$defs/id" },
+        "keyframe": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["prompt", "seed"],
+          "properties": {
+            "prompt": { "type": "string", "minLength": 15, "description": "Subject and composition only. The stage appends character/location descriptions and the style block." },
+            "seed": { "$ref": "#/$defs/seed" },
+            "use_references": { "type": "boolean", "default": true },
+            "chosen_candidate": { "type": ["integer", "null"], "minimum": 0 }
+          }
+        },
+        "motion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mode", "fallback"],
+          "properties": {
+            "mode": { "enum": ["i2v", "ken_burns", "still"] },
+            "prompt": { "type": "string", "minLength": 5, "description": "Motion and camera only." },
+            "seed": { "$ref": "#/$defs/seed" },
+            "clip_s": { "type": "number", "minimum": 1, "maximum": 5.1 },
+            "trim_head_s": { "type": "number", "minimum": 0, "maximum": 1 },
+            "fallback": { "enum": ["ken_burns", "still"] },
+            "ken_burns": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "zoom_from": { "type": "number", "minimum": 1, "maximum": 1.5 },
+                "zoom_to": { "type": "number", "minimum": 1, "maximum": 1.5 },
+                "pan": { "enum": ["none", "left", "right", "up", "down"] }
+              }
+            }
+          },
+          "if": { "properties": { "mode": { "const": "i2v" } } },
+          "then": { "required": ["prompt", "seed", "clip_s"] }
+        },
+        "narration": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["offset_s", "lines"],
+          "properties": {
+            "offset_s": { "type": "number", "minimum": 0, "maximum": 6, "description": "Delay from the shot's start before the first line." },
+            "tail_s": { "type": "number", "minimum": 0, "maximum": 4, "default": 0.6, "description": "Silence kept after the last line before the cut." },
+            "lines": { "type": "array", "maxItems": 4, "items": { "$ref": "#/$defs/line" } }
+          }
+        },
+        "transition_in": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type"],
+          "properties": {
+            "type": { "enum": ["cut", "crossfade", "fade_from_black"] },
+            "duration_s": { "type": "number", "minimum": 0.2, "maximum": 2 }
+          }
+        },
+        "reframe_9x16": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mode"],
+          "properties": {
+            "mode": { "enum": ["center_crop", "blur_fill"] },
+            "focus_x": { "type": "number", "minimum": 0, "maximum": 1 }
+          }
+        }
+      }
+    },
+
+    "music_cue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "start_shot", "end_shot", "role", "caption", "bpm", "key", "time_signature", "instrumental", "seed", "candidates"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^m[0-9]{2}$" },
+        "start_shot": { "type": "string", "pattern": "^s[0-9]{2}$" },
+        "end_shot": { "type": "string", "pattern": "^s[0-9]{2}$", "description": "Inclusive. Timing follows the edit." },
+        "role": { "enum": ["intro", "underscore", "tension", "build", "theme_return", "outro"] },
+        "caption": { "type": "string", "minLength": 15, "maxLength": 512, "description": "Style, mood, instruments, texture. No tempo or key here." },
+        "bpm": { "type": "integer", "minimum": 40, "maximum": 180 },
+        "key": { "type": "string", "pattern": "^[A-G](#|b)? (major|minor)$" },
+        "time_signature": { "enum": ["2", "3", "4", "6"], "description": "Numerator only, as ACE-Step expects." },
+        "instrumental": { "const": true },
+        "seed": { "$ref": "#/$defs/seed" },
+        "candidates": { "type": "integer", "minimum": 1, "maximum": 4 },
+        "chosen_candidate": { "type": ["integer", "null"], "minimum": 0 },
+        "fade_in_s": { "type": "number", "minimum": 0, "maximum": 5 },
+        "fade_out_s": { "type": "number", "minimum": 0, "maximum": 8 }
+      }
+    }
+  }
+}

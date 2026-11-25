@@ -1,0 +1,518 @@
+{
+  "schema_version": "1.1.0",
+  "project": {
+    "title": "I'm Only Eating for You",
+    "logline": "One breakfast, my mother and I tease my father until he leaves the table; a smile and a 'sorry' bring him back, with a line our family still laughs about.",
+    "audience": "My family and our relatives in Ethiopia and abroad, watching on their phones in the family group chat and on my social media.",
+    "intent": "They should laugh at a moment they recognise, and leave feeling that in our family a simple 'sorry' is enough to bring someone back to the table.",
+    "narration_language": "am",
+    "subtitle_language": "en",
+    "target_duration_s": { "min": 60, "max": 90 }
+  },
+  "style": {
+    "style_block": "warm hand-painted storybook illustration, soft gouache texture, gentle film grain, soft morning window light, warm palette of honey yellow, terracotta, cream and deep green, expressive but simple faces, cosy and intimate, no text, no letters, no logos",
+    "negative_prompt": "photorealistic, harsh contrast, neon colours, text, subtitles, watermark, extra fingers, deformed hands, distorted face, flicker, blurry, morphing",
+    "palette": ["#E0A830", "#C2603A", "#F3E6CC", "#2F5D4A", "#5B3A29"]
+  },
+  "characters": [
+    {
+      "id": "dad",
+      "name": "Abbaye (my father)",
+      "description": "an Ethiopian man in his fifties, short greying hair, neat greying moustache, kind eyes, wearing a light blue button-up shirt",
+      "reference_prompt": "character reference sheet, front view, three-quarter view and profile of an Ethiopian man in his fifties, short greying hair, neat greying moustache, kind eyes, wearing a light blue button-up shirt, plain warm background",
+      "seed": 110001,
+      "real_person": true,
+      "consent_ref": "ETHICS.md#consent-dad",
+      "approved_candidate": null
+    },
+    {
+      "id": "mom",
+      "name": "Emaye (my mother)",
+      "description": "an Ethiopian woman in her late forties, warm smile, hair wrapped in a soft patterned scarf, wearing a white cotton habesha dress with a thin coloured tibeb border",
+      "reference_prompt": "character reference sheet, front view, three-quarter view and profile of an Ethiopian woman in her late forties, warm smile, hair wrapped in a soft patterned scarf, wearing a white cotton habesha dress with a thin coloured tibeb border, plain warm background",
+      "seed": 110002,
+      "real_person": true,
+      "consent_ref": "ETHICS.md#consent-mom",
+      "approved_candidate": null
+    },
+    {
+      "id": "me",
+      "name": "Me (the narrator)",
+      "description": "a young Ethiopian person in their early twenties, short black hair, cheeky smile, wearing a dark green t-shirt",
+      "reference_prompt": "character reference sheet, front view, three-quarter view and profile of a young Ethiopian person in their early twenties, short black hair, cheeky smile, wearing a dark green t-shirt, plain warm background",
+      "seed": 110003,
+      "real_person": true,
+      "consent_ref": "ETHICS.md#consent-me",
+      "approved_candidate": null
+    }
+  ],
+  "locations": [
+    {
+      "id": "dining",
+      "name": "Our dining room",
+      "description": "a small family dining room in Addis Ababa, a wooden table with a woven tablecloth, plates of firfir and bread, small glasses of tea, a thermos, morning light from a window with lace curtains",
+      "reference_prompt": "environment reference, small family dining room in Addis Ababa, wooden table with a woven tablecloth, plates of firfir and bread, small glasses of tea, a thermos, morning light from a window with lace curtains, no people",
+      "seed": 120001,
+      "real_person": false,
+      "approved_candidate": null
+    },
+    {
+      "id": "wash_corner",
+      "name": "The hand-washing corner",
+      "description": "a corner by the dining room doorway with a metal hand-washing jug and basin on a low stool, a towel on a hook, soft side light",
+      "reference_prompt": "environment reference, a corner by a dining room doorway with a metal hand-washing jug and basin on a low stool, a towel on a hook, soft side light, no people",
+      "seed": 120002,
+      "real_person": false,
+      "approved_candidate": null
+    }
+  ],
+  "defaults": {
+    "keyframe": {
+      "provider": "cloudflare-workers-ai",
+      "model": "@cf/black-forest-labs/flux-2-klein-4b",
+      "width": 1280,
+      "height": 720,
+      "candidates": 2,
+      "reference_candidates": 3
+    },
+    "shot": {
+      "provider": "kaggle",
+      "model": "Wan-AI/Wan2.2-TI2V-5B-Diffusers",
+      "width": 832,
+      "height": 480,
+      "fps": 24,
+      "steps": 30,
+      "guidance": 5.0,
+      "dtype": "auto",
+      "max_attempts": 2
+    },
+    "narration": {
+      "model": "gemini-3.8-flash-tts",
+      "voices": { "narrator": "Kore", "dad": "Charon" },
+      "style_instruction": "Warm, gently amused storyteller remembering a family moment, unhurried, natural Amharic"
+    },
+    "music": {
+      "provider": "kaggle",
+      "model": "ACE-Step/acestep-v15-xl-turbo-diffusers",
+      "steps": 8
+    }
+  },
+  "shots": [
+    {
+      "id": "s01",
+      "beat": "Where we are: a family breakfast.",
+      "reason": "Establishes the home, the morning and the three of us together before anything goes wrong.",
+      "duration_s": 8,
+      "shot_size": "wide",
+      "camera": "push_in",
+      "characters": ["dad", "mom", "me"],
+      "location": "dining",
+      "keyframe": {
+        "prompt": "wide shot of a family of three sitting around the breakfast table, the father at the head of the table in the centre, the mother on the left, the young person on the right, steam rising from tea glasses",
+        "seed": 210001,
+        "use_references": true,
+        "chosen_candidate": null
+      },
+      "motion": {
+        "mode": "i2v",
+        "prompt": "steam rises gently from the tea, the family eats calmly, camera pushes in very slowly",
+        "seed": 310001,
+        "clip_s": 5.0,
+        "trim_head_s": 0.3,
+        "fallback": "ken_burns",
+        "ken_burns": { "zoom_from": 1.0, "zoom_to": 1.1, "pan": "none" }
+      },
+      "narration": {
+        "offset_s": 1.0,
+        "lines": [
+          {
+            "speaker": "narrator",
+            "text": "በቤታችን ቁርስ ሁላችንም አብረን የምንሆንበት ጊዜ ነበር።",
+            "subtitle_en": "In our house, breakfast was the time we were all together."
+          }
+        ]
+      },
+      "transition_in": { "type": "fade_from_black", "duration_s": 1.0 },
+      "reframe_9x16": { "mode": "blur_fill" }
+    },
+    {
+      "id": "s02",
+      "beat": "The teasing starts.",
+      "reason": "Shows mom and me as a team, laughing, so the audience is in on the joke before it goes too far.",
+      "duration_s": 9,
+      "shot_size": "medium",
+      "camera": "static",
+      "characters": ["mom", "me"],
+      "location": "dining",
+      "keyframe": {
+        "prompt": "medium shot, the mother and the young person lean toward each other at the breakfast table, laughing and whispering mischievously, centred in frame",
+        "seed": 210002,
+        "use_references": true,
+        "chosen_candidate": null
+      },
+      "motion": {
+        "mode": "i2v",
+        "prompt": "they laugh and whisper to each other, shoulders shaking with laughter, fixed camera",
+        "seed": 310002,
+        "clip_s": 5.0,
+        "trim_head_s": 0.3,
+        "fallback": "ken_burns",
+        "ken_burns": { "zoom_from": 1.05, "zoom_to": 1.0, "pan": "none" }
+      },
+      "narration": {
+        "offset_s": 0.5,
+        "lines": [
+          {
+            "speaker": "narrator",
+            "text": "አንድ ቀን ጠዋት እኔና እናቴ አባቴ የማይወዳቸውን ነገሮች እያነሳን መቀለድ ጀመርን።",
+            "subtitle_en": "One morning, my mom and I started joking about the things my dad doesn't like."
+          }
+        ]
+      },
+      "transition_in": { "type": "cut" },
+      "reframe_9x16": { "mode": "center_crop", "focus_x": 0.5 }
+    },
+    {
+      "id": "s03",
+      "beat": "Dad is not laughing.",
+      "reason": "The turn of the story: a close-up of his face tells the audience the joke has landed badly.",
+      "duration_s": 7,
+      "shot_size": "close_up",
+      "camera": "push_in",
+      "characters": ["dad"],
+      "location": "dining",
+      "keyframe": {
+        "prompt": "close-up of the father at the breakfast table, frowning, annoyed, holding a piece of bread, centred",
+        "seed": 210003,
+        "use_references": true,
+        "chosen_candidate": null
+      },
+      "motion": {
+        "mode": "i2v",
+        "prompt": "he slowly puts down the bread and frowns, camera pushes in slightly",
+        "seed": 310003,
+        "clip_s": 5.0,
+        "trim_head_s": 0.3,
+        "fallback": "ken_burns",
+        "ken_burns": { "zoom_from": 1.0, "zoom_to": 1.15, "pan": "none" }
+      },
+      "narration": {
+        "offset_s": 0.6,
+        "lines": [
+          {
+            "speaker": "narrator",
+            "text": "እኛ አስቂኝ መስሎን ነበር። እሱ ግን አልሳቀም።",
+            "subtitle_en": "We thought it was funny. He didn't laugh."
+          }
+        ]
+      },
+      "transition_in": { "type": "cut" },
+      "reframe_9x16": { "mode": "center_crop", "focus_x": 0.5 }
+    },
+    {
+      "id": "s04",
+      "beat": "He leaves before finishing.",
+      "reason": "The half-eaten plate is the image of what our joke cost him, and it sets up the ending.",
+      "duration_s": 8,
+      "shot_size": "insert",
+      "camera": "static",
+      "characters": [],
+      "location": "dining",
+      "keyframe": {
+        "prompt": "close insert of a half-eaten plate of firfir and a glass of tea in front of an empty chair pushed back from the table",
+        "seed": 210004,
+        "use_references": true,
+        "chosen_candidate": null
+      },
+      "motion": {
+        "mode": "i2v",
+        "prompt": "steam fades slowly from the tea glass, the room is still, fixed camera",
+        "seed": 310004,
+        "clip_s": 5.0,
+        "trim_head_s": 0.3,
+        "fallback": "ken_burns",
+        "ken_burns": { "zoom_from": 1.1, "zoom_to": 1.0, "pan": "none" }
+      },
+      "narration": {
+        "offset_s": 0.6,
+        "lines": [
+          {
+            "speaker": "narrator",
+            "text": "ተበሳጭቶ ቁርሱን ሳይጨርስ ከማዕዱ ተነሳ።",
+            "subtitle_en": "Upset, he got up and left the table before finishing his breakfast."
+          }
+        ]
+      },
+      "transition_in": { "type": "cut" },
+      "reframe_9x16": { "mode": "center_crop", "focus_x": 0.5 }
+    },
+    {
+      "id": "s05",
+      "beat": "A quiet pause: he washes his hands.",
+      "reason": "A slow, silent-feeling moment that lets the tension sit before he returns.",
+      "duration_s": 6,
+      "shot_size": "insert",
+      "camera": "static",
+      "characters": ["dad"],
+      "location": "wash_corner",
+      "keyframe": {
+        "prompt": "close insert of the father's hands being washed over a metal basin, water pouring from a metal jug, blue shirt cuffs visible",
+        "seed": 210005,
+        "use_references": true,
+        "chosen_candidate": null
+      },
+      "motion": {
+        "mode": "i2v",
+        "prompt": "water pours slowly over his hands into the basin, fixed camera",
+        "seed": 310005,
+        "clip_s": 5.0,
+        "trim_head_s": 0.3,
+        "fallback": "ken_burns",
+        "ken_burns": { "zoom_from": 1.0, "zoom_to": 1.08, "pan": "none" }
+      },
+      "narration": {
+        "offset_s": 0.8,
+        "lines": [
+          {
+            "speaker": "narrator",
+            "text": "እጁን ታጠበ።",
+            "subtitle_en": "He washed his hands."
+          }
+        ]
+      },
+      "transition_in": { "type": "crossfade", "duration_s": 0.6 },
+      "reframe_9x16": { "mode": "center_crop", "focus_x": 0.5 }
+    },
+    {
+      "id": "s06",
+      "beat": "He comes back and just stands there.",
+      "reason": "His silent return is the emotional centre: he wants to come back but is waiting for something.",
+      "duration_s": 8,
+      "shot_size": "medium",
+      "camera": "static",
+      "characters": ["dad"],
+      "location": "dining",
+      "keyframe": {
+        "prompt": "medium shot of the father standing quietly in the dining room doorway, hands by his sides, looking at the table with a sad face, centred",
+        "seed": 210006,
+        "use_references": true,
+        "chosen_candidate": null
+      },
+      "motion": {
+        "mode": "i2v",
+        "prompt": "he stands still and breathes slowly, curtains move slightly, fixed camera",
+        "seed": 310006,
+        "clip_s": 5.0,
+        "trim_head_s": 0.3,
+        "fallback": "ken_burns",
+        "ken_burns": { "zoom_from": 1.0, "zoom_to": 1.1, "pan": "none" }
+      },
+      "narration": {
+        "offset_s": 0.5,
+        "lines": [
+          {
+            "speaker": "narrator",
+            "text": "ከዚያም ተመልሶ መጣና ምንም ሳይናገር ዝም ብሎ ቆመ።",
+            "subtitle_en": "Then he came back and stood there quietly, without a word."
+          }
+        ]
+      },
+      "transition_in": { "type": "crossfade", "duration_s": 0.6 },
+      "reframe_9x16": { "mode": "center_crop", "focus_x": 0.5 }
+    },
+    {
+      "id": "s07",
+      "beat": "We realise, smile and say sorry.",
+      "reason": "The turning point of the story: the apology, shown on our faces.",
+      "duration_s": 9,
+      "shot_size": "medium_close_up",
+      "camera": "static",
+      "characters": ["mom", "me"],
+      "location": "dining",
+      "keyframe": {
+        "prompt": "medium close-up, the mother and the young person at the table look up toward the doorway with gentle apologetic smiles, centred",
+        "seed": 210007,
+        "use_references": true,
+        "chosen_candidate": null
+      },
+      "motion": {
+        "mode": "i2v",
+        "prompt": "they look up and smile softly, the mother nods gently, fixed camera",
+        "seed": 310007,
+        "clip_s": 5.0,
+        "trim_head_s": 0.3,
+        "fallback": "ken_burns",
+        "ken_burns": { "zoom_from": 1.05, "zoom_to": 1.0, "pan": "none" }
+      },
+      "narration": {
+        "offset_s": 0.5,
+        "lines": [
+          {
+            "speaker": "narrator",
+            "text": "ያኔ እንዳሳዘንነው ገባን። ፈገግ ብለን ይቅርታ ጠየቅነው።",
+            "subtitle_en": "Then we realised we had made him sad. We smiled and said sorry."
+          }
+        ]
+      },
+      "transition_in": { "type": "cut" },
+      "reframe_9x16": { "mode": "center_crop", "focus_x": 0.5 }
+    },
+    {
+      "id": "s08",
+      "beat": "He laughs, sits down and delivers the line.",
+      "reason": "The punchline, in Dad's own voice, is the moment the whole film builds toward.",
+      "duration_s": 12,
+      "shot_size": "medium",
+      "camera": "static",
+      "characters": ["dad"],
+      "location": "dining",
+      "keyframe": {
+        "prompt": "medium shot of the father sitting back down at the breakfast table, laughing warmly, picking up bread again, centred",
+        "seed": 210008,
+        "use_references": true,
+        "chosen_candidate": null
+      },
+      "motion": {
+        "mode": "i2v",
+        "prompt": "he laughs, shakes his head and starts eating again, fixed camera",
+        "seed": 310008,
+        "clip_s": 5.0,
+        "trim_head_s": 0.3,
+        "fallback": "ken_burns",
+        "ken_burns": { "zoom_from": 1.0, "zoom_to": 1.08, "pan": "none" }
+      },
+      "narration": {
+        "offset_s": 0.4,
+        "lines": [
+          {
+            "speaker": "narrator",
+            "text": "ሳቀ፣ ተመልሶ ተቀመጠና መብላት ጀመረ። ከዚያም እንዲህ አለ፦",
+            "subtitle_en": "He laughed, sat back down and started eating. Then he said:",
+            "pause_after_s": 0.5
+          },
+          {
+            "speaker": "dad",
+            "text": "ተመልሼ የመጣሁት ይቅርታ ስላላችሁኝ ነው። የምበላው ለእናንተ ብዬ ብቻ ነው!",
+            "subtitle_en": "\"I only came back because you said sorry. I'm only eating for you!\"",
+            "style": "a father pretending to be serious but clearly amused, playful and warm"
+          }
+        ]
+      },
+      "transition_in": { "type": "cut" },
+      "reframe_9x16": { "mode": "center_crop", "focus_x": 0.5 }
+    },
+    {
+      "id": "s09",
+      "beat": "Today: the line became a family joke.",
+      "reason": "Brings the story to the audience's own table and states what it means to us now.",
+      "duration_s": 9,
+      "shot_size": "wide",
+      "camera": "pull_out",
+      "characters": ["dad", "mom", "me"],
+      "location": "dining",
+      "keyframe": {
+        "prompt": "wide shot of the family of three laughing together around the breakfast table, the father in the centre, warm golden light",
+        "seed": 210009,
+        "use_references": true,
+        "chosen_candidate": null
+      },
+      "motion": {
+        "mode": "i2v",
+        "prompt": "the family laughs together, camera pulls back slowly",
+        "seed": 310009,
+        "clip_s": 5.0,
+        "trim_head_s": 0.3,
+        "fallback": "ken_burns",
+        "ken_burns": { "zoom_from": 1.12, "zoom_to": 1.0, "pan": "none" }
+      },
+      "narration": {
+        "offset_s": 0.5,
+        "tail_s": 1.2,
+        "lines": [
+          {
+            "speaker": "narrator",
+            "text": "ዛሬም ድረስ ይህን ስናስታውስ እንስቃለን። አንዳንዴ አንድ ይቅርታ ሰውን ወደ ማዕድ ይመልሳል።",
+            "subtitle_en": "To this day, we laugh when we remember it. Sometimes one 'sorry' is enough to bring someone back to the table."
+          }
+        ]
+      },
+      "transition_in": { "type": "crossfade", "duration_s": 0.8 },
+      "reframe_9x16": { "mode": "blur_fill" }
+    }
+  ],
+  "music": {
+    "cues": [
+      {
+        "id": "m01",
+        "start_shot": "s01",
+        "end_shot": "s03",
+        "role": "intro",
+        "caption": "light playful acoustic underscore, plucked krar-like strings, soft hand percussion, warm and cheeky, morning family mood, sparse texture with no strong lead melody",
+        "bpm": 96,
+        "key": "G major",
+        "time_signature": "4",
+        "instrumental": true,
+        "seed": 410001,
+        "candidates": 3,
+        "chosen_candidate": null,
+        "fade_in_s": 1.5,
+        "fade_out_s": 1.5
+      },
+      {
+        "id": "m02",
+        "start_shot": "s04",
+        "end_shot": "s06",
+        "role": "tension",
+        "caption": "quiet tender underscore, slow sustained bowed strings and soft piano notes, a little sad and hesitant, very sparse and calm",
+        "bpm": 70,
+        "key": "E minor",
+        "time_signature": "4",
+        "instrumental": true,
+        "seed": 410002,
+        "candidates": 3,
+        "chosen_candidate": null,
+        "fade_in_s": 1.0,
+        "fade_out_s": 1.5
+      },
+      {
+        "id": "m03",
+        "start_shot": "s07",
+        "end_shot": "s09",
+        "role": "theme_return",
+        "caption": "the playful krar-like theme returns, warm and joyful, gentle hand percussion and soft strings, feel-good family ending, slow gentle resolution",
+        "bpm": 96,
+        "key": "G major",
+        "time_signature": "4",
+        "instrumental": true,
+        "seed": 410003,
+        "candidates": 3,
+        "chosen_candidate": null,
+        "fade_in_s": 1.0,
+        "fade_out_s": 3.0
+      }
+    ],
+    "ducking": { "threshold": 0.02, "ratio": 6, "attack_ms": 300, "release_ms": 1500 }
+  },
+  "mix": {
+    "integrated_lufs": -14,
+    "true_peak_db": -1,
+    "voice_lufs": -16,
+    "music_lufs": -24
+  },
+  "subtitles": {
+    "burn_in": true,
+    "max_chars_per_line": 40,
+    "max_lines": 2,
+    "font": "DejaVu Sans",
+    "vertical_margin_pct": 20
+  },
+  "end_card": {
+    "text": "Made with AI",
+    "subtext": "Pictures, voices and music generated with AI from a real family story, told with my family's consent.",
+    "duration_s": 3
+  },
+  "exports": [
+    { "name": "horizontal", "aspect": "16:9", "width": 1920, "height": 1080 },
+    { "name": "vertical", "aspect": "9:16", "width": 1080, "height": 1920 }
+  ]
+}
