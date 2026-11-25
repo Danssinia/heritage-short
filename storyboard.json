@@ -24,7 +24,7 @@
       "real_person": true,
       "consent_ref": "ETHICS.md#consent-dad",
       "photo": "private/dad.jpg",
-      "approved_candidate": null
+      "approved_candidate": 2
     },
     {
       "id": "mom",
@@ -35,7 +35,7 @@
       "real_person": true,
       "consent_ref": "ETHICS.md#consent-mom",
       "photo": "private/mom.jpg",
-      "approved_candidate": null
+      "approved_candidate": 1
     },
     {
       "id": "me",
@@ -46,7 +46,7 @@
       "real_person": true,
       "consent_ref": "ETHICS.md#consent-me",
       "photo": "private/me.jpg",
-      "approved_candidate": null
+      "approved_candidate": 0
     }
   ],
   "locations": [
@@ -57,7 +57,7 @@
       "reference_prompt": "environment reference, small family dining room in Addis Ababa, wooden table with a woven tablecloth, plates of firfir and bread, small glasses of tea, a thermos, morning light from a window with lace curtains, no people",
       "seed": 120001,
       "real_person": false,
-      "approved_candidate": null
+      "approved_candidate": 1
     },
     {
       "id": "wash_corner",
@@ -66,7 +66,7 @@
       "reference_prompt": "environment reference, a corner by a dining room doorway with a metal hand-washing jug and basin on a low stool, a towel on a hook, soft side light, no people",
       "seed": 120002,
       "real_person": false,
-      "approved_candidate": null
+      "approved_candidate": 2
     }
   ],
   "defaults": {
