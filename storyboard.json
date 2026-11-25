@@ -23,6 +23,7 @@
       "seed": 110001,
       "real_person": true,
       "consent_ref": "ETHICS.md#consent-dad",
+      "photo": "private/dad.jpg",
       "approved_candidate": null
     },
     {
@@ -33,6 +34,7 @@
       "seed": 110002,
       "real_person": true,
       "consent_ref": "ETHICS.md#consent-mom",
+      "photo": "private/mom.jpg",
       "approved_candidate": null
     },
     {
@@ -43,6 +45,7 @@
       "seed": 110003,
       "real_person": true,
       "consent_ref": "ETHICS.md#consent-me",
+      "photo": "private/me.jpg",
       "approved_candidate": null
     }
   ],

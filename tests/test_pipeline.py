@@ -37,6 +37,7 @@ def test_storyboard_is_valid():
     (lambda s: s["shots"][0]["motion"].pop("seed"), "seed"),
     (lambda s: s["shots"][7]["narration"]["lines"][1].update(speaker="uncle"), "has no voice"),
     (lambda s: s.update(exports=[s["exports"][0]]), "exports"),
+    (lambda s: s["characters"][0].update(photo="photos/dad.jpg"), "private/"),
 ])
 def test_broken_storyboards_are_rejected(tmp_path, sb, mutate, message):
     bad = copy.deepcopy(sb)
@@ -97,3 +98,71 @@ def test_wan_frame_count_is_4k_plus_1():
 
 def test_no_semantic_errors_in_sample(sb):
     assert semantic_errors(sb) == []
+
+
+def test_ref_png_applies_exif_rotation():
+    import io
+    from PIL import Image
+    from pipeline.common.providers.cloudflare import _ref_png
+    im = Image.new("RGB", (400, 200))
+    exif = im.getexif()
+    exif[0x0112] = 6  # orientation: rotate 90 degrees
+    buf = io.BytesIO()
+    im.save(buf, format="JPEG", exif=exif)
+    out = Image.open(io.BytesIO(_ref_png(buf.getvalue())))
+    assert out.size == (200, 400)
+
+
+def _references_sandbox(tmp_path, monkeypatch, sb, photo):
+    from pipeline import references
+    from pipeline.common.providers import cloudflare
+    subj = copy.deepcopy(sb["characters"][0])
+    subj["photo"] = photo
+    small = copy.deepcopy(sb)
+    small["characters"], small["locations"] = [subj], []
+    small["defaults"]["keyframe"]["reference_candidates"] = 2
+    calls = []
+    real = cloudflare.generate_image
+    monkeypatch.setattr(references.story, "load", lambda: small)
+    monkeypatch.setattr(references, "ROOT", tmp_path)  # photo paths resolve here
+    monkeypatch.setattr(references, "stage_dir", lambda name: tmp_path)
+    monkeypatch.setattr(references, "Manifest", lambda: Manifest(tmp_path / "manifest.json"))
+    monkeypatch.setattr(references, "contact_sheet", lambda rows, out: out)
+    monkeypatch.setattr(references, "log_call", lambda **kw: None)
+    monkeypatch.setattr(cloudflare, "generate_image",
+                        lambda model, prompt, w, h, seed, refs=None: calls.append((prompt, refs)) or real(model, prompt, 64, 64, seed, refs))
+    return references, calls
+
+
+@pytest.fixture()
+def ref_dir(tmp_path):
+    import shutil
+    d = ROOT / "outputs_mock" / f"_test_refs_{tmp_path.name}"
+    d.mkdir(parents=True, exist_ok=True)
+    yield d
+    shutil.rmtree(d, ignore_errors=True)
+
+
+def test_references_send_photo_and_hint(ref_dir, monkeypatch, sb):
+    tmp_path = ref_dir
+    (tmp_path / "private").mkdir()
+    (tmp_path / "private" / "dad.jpg").write_bytes(b"photo-bytes")
+    references, calls = _references_sandbox(tmp_path, monkeypatch, sb, "private/dad.jpg")
+    references.run()
+    assert len(calls) == 2
+    assert all(refs == [b"photo-bytes"] for _, refs in calls)
+    assert all(prompt.endswith(references.PHOTO_HINT) for prompt, _ in calls)
+    references.run()
+    assert len(calls) == 2  # cached on the second run
+
+
+def test_references_missing_photo(ref_dir, monkeypatch, sb):
+    tmp_path = ref_dir
+    references, calls = _references_sandbox(tmp_path, monkeypatch, sb, "private/dad.jpg")
+    with pytest.raises(SystemExit) as e:
+        references.run()
+    assert "missing" in str(e.value)
+    for k in range(2):
+        (tmp_path / f"{sb['characters'][0]['id']}_c{k}.png").write_bytes(b"x")
+    references.run()  # all candidates exist: keep them
+    assert calls == []

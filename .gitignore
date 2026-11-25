@@ -1,5 +1,6 @@
-# secrets
+# secrets and private family photos (never pushed: the repo is public)
 .env
+private/
 kaggle.json
 *.pem
 

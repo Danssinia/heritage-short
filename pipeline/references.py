@@ -13,7 +13,7 @@ import argparse
 from pathlib import Path
 
 from .common import story
-from .common.cache import Manifest, stable_hash
+from .common.cache import Manifest, file_hash, stable_hash
 from .common.config import ROOT, stage_dir
 from .common.prices import klein_cost
 from .common.providers import cloudflare
@@ -22,6 +22,8 @@ from .common.runlog import Timer, log_call
 from .common.sheets import contact_sheet
 
 REF_W, REF_H = 1024, 1024
+PHOTO_HINT = (" Base the face, features and build on the person in the reference photo,"
+              " redrawn as an illustrated character in this style, not a photograph.")
 
 
 def candidate_path(subject_id: str, k: int) -> Path:
@@ -63,19 +65,35 @@ def run(force: bool = False) -> None:
     rows = []
     for subj in sb["characters"] + sb["locations"]:
         prompt = story.reference_prompt(sb, subj)
-        paths = []
+        paths = [candidate_path(subj["id"], k) for k in range(n)]
+        refs, photo_hash = None, None
+        if subj.get("photo"):
+            photo = ROOT / subj["photo"]
+            if not photo.is_file():
+                if all(p.exists() for p in paths):
+                    print(f"  note: {subj['id']}: photo {subj['photo']} not found; keeping the existing candidates")
+                    cached += n
+                    rows.append((subj["id"], paths))
+                    continue
+                raise SystemExit(f"references: {subj['id']} has photo {subj['photo']} but the file is missing "
+                                 f"(put it in private/ or remove \"photo\" from storyboard.json)")
+            refs = [photo.read_bytes()]
+            photo_hash = file_hash(photo)
+            prompt += PHOTO_HINT
         for k in range(n):
             seed = subj["seed"] + k
             key = f"reference:{subj['id']}:c{k}"
-            h = stable_hash({"model": d["model"], "prompt": prompt, "seed": seed, "w": REF_W, "h": REF_H})
-            out = candidate_path(subj["id"], k)
-            paths.append(out)
+            inputs = {"model": d["model"], "prompt": prompt, "seed": seed, "w": REF_W, "h": REF_H}
+            if photo_hash:
+                inputs["photo"] = photo_hash
+            h = stable_hash(inputs)
+            out = paths[k]
             if not force and manifest.fresh(key, h):
                 cached += 1
                 continue
             print(f"  reference {subj['id']} candidate {k} ...")
-            generate(d["model"], prompt, seed, REF_W, REF_H, out, "references", cache_key=h,
-                     extra={"subject": subj["id"], "candidate": k})
+            generate(d["model"], prompt, seed, REF_W, REF_H, out, "references", refs=refs, cache_key=h,
+                     extra={"subject": subj["id"], "candidate": k, "from_photo": refs is not None})
             manifest.put(key, h, [out])
             made += 1
         rows.append((subj["id"], paths))

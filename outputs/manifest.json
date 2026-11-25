@@ -179,5 +179,110 @@
       "outputs/narration/s09_l0.wav"
     ],
     "updated": "2026-11-25T17:36:32+00:00"
+  },
+  "reference:dad:c0": {
+    "hash": "e7115aa5c6b29e9b",
+    "paths": [
+      "outputs/references/dad_c0.png"
+    ],
+    "updated": "2026-11-25T18:03:52+00:00"
+  },
+  "reference:dad:c1": {
+    "hash": "42d1bb78f0ba39cb",
+    "paths": [
+      "outputs/references/dad_c1.png"
+    ],
+    "updated": "2026-11-25T18:04:12+00:00"
+  },
+  "reference:dad:c2": {
+    "hash": "bd5b8fcbef06225a",
+    "paths": [
+      "outputs/references/dad_c2.png"
+    ],
+    "updated": "2026-11-25T18:04:35+00:00"
+  },
+  "reference:dining:c0": {
+    "hash": "7da2048373fc85aa",
+    "paths": [
+      "outputs/references/dining_c0.png"
+    ],
+    "updated": "2026-11-25T18:06:35+00:00"
+  },
+  "reference:dining:c1": {
+    "hash": "8482e08d9fddd051",
+    "paths": [
+      "outputs/references/dining_c1.png"
+    ],
+    "updated": "2026-11-25T18:06:51+00:00"
+  },
+  "reference:dining:c2": {
+    "hash": "8c677d8d3cf150d7",
+    "paths": [
+      "outputs/references/dining_c2.png"
+    ],
+    "updated": "2026-11-25T18:07:07+00:00"
+  },
+  "reference:me:c0": {
+    "hash": "4140da2a9a315078",
+    "paths": [
+      "outputs/references/me_c0.png"
+    ],
+    "updated": "2026-11-25T18:05:41+00:00"
+  },
+  "reference:me:c1": {
+    "hash": "820208219a6f9ef4",
+    "paths": [
+      "outputs/references/me_c1.png"
+    ],
+    "updated": "2026-11-25T18:06:01+00:00"
+  },
+  "reference:me:c2": {
+    "hash": "0863528b01a9fee6",
+    "paths": [
+      "outputs/references/me_c2.png"
+    ],
+    "updated": "2026-11-25T18:06:17+00:00"
+  },
+  "reference:mom:c0": {
+    "hash": "fbb411ea57642e80",
+    "paths": [
+      "outputs/references/mom_c0.png"
+    ],
+    "updated": "2026-11-25T18:04:49+00:00"
+  },
+  "reference:mom:c1": {
+    "hash": "27f90241ed8a2e86",
+    "paths": [
+      "outputs/references/mom_c1.png"
+    ],
+    "updated": "2026-11-25T18:05:06+00:00"
+  },
+  "reference:mom:c2": {
+    "hash": "16e9e480520c6704",
+    "paths": [
+      "outputs/references/mom_c2.png"
+    ],
+    "updated": "2026-11-25T18:05:22+00:00"
+  },
+  "reference:wash_corner:c0": {
+    "hash": "611c321ac79f4899",
+    "paths": [
+      "outputs/references/wash_corner_c0.png"
+    ],
+    "updated": "2026-11-25T18:07:20+00:00"
+  },
+  "reference:wash_corner:c1": {
+    "hash": "20547336ee8d31a9",
+    "paths": [
+      "outputs/references/wash_corner_c1.png"
+    ],
+    "updated": "2026-11-25T18:07:37+00:00"
+  },
+  "reference:wash_corner:c2": {
+    "hash": "73af320f1ee104df",
+    "paths": [
+      "outputs/references/wash_corner_c2.png"
+    ],
+    "updated": "2026-11-25T18:07:51+00:00"
   }
 }

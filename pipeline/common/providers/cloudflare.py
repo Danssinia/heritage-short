@@ -10,7 +10,7 @@ import base64
 import io
 
 import requests
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageOps
 
 from ..config import env, mock
 from ..retry import ProviderError, RetryableError
@@ -20,7 +20,7 @@ TIMEOUT = 180
 
 def _ref_png(data: bytes, max_side: int = 496) -> bytes:
     """Downscale a reference image so both sides are under 512 px, as FLUX.2 klein requires."""
-    im = Image.open(io.BytesIO(data)).convert("RGB")
+    im = ImageOps.exif_transpose(Image.open(io.BytesIO(data))).convert("RGB")
     im.thumbnail((max_side, max_side))
     buf = io.BytesIO()
     im.save(buf, format="PNG")

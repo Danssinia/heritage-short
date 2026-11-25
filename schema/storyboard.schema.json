@@ -205,6 +205,7 @@
         "seed": { "$ref": "#/$defs/seed" },
         "real_person": { "type": "boolean" },
         "consent_ref": { "type": "string", "pattern": "^ETHICS\\.md#[a-z0-9-]+$", "description": "Anchor of the consent record in ETHICS.md." },
+        "photo": { "type": "string", "pattern": "^private/[A-Za-z0-9_.-]+\\.(jpg|jpeg|png|JPG|JPEG|PNG)$", "description": "Optional private photo (git-ignored) sent as the reference image for this subject's sheet." },
         "approved_candidate": { "type": ["integer", "null"], "minimum": 0, "description": "Index of the approved reference image (the golden reference). null = not chosen yet." }
       },
       "if": { "properties": { "real_person": { "const": true } } },
