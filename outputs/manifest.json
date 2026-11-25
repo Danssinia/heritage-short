@@ -224,103 +224,103 @@
     "updated": "2026-11-25T17:36:53+00:00"
   },
   "music:m01_c0": {
-    "hash": "eb8c868f3fe8919c",
+    "hash": "b888b66a1ffe8ed8",
     "meta": {
       "gpu": "Tesla T4",
-      "latency_s": 24.7
+      "latency_s": 22.3
     },
     "paths": [
       "outputs/music/m01_c0.wav"
     ],
-    "updated": "2026-11-25T19:55:11+00:00"
+    "updated": "2026-11-25T20:29:01+00:00"
   },
   "music:m01_c1": {
-    "hash": "ec228cf9df062597",
+    "hash": "9a0a6061c79c6053",
     "meta": {
       "gpu": "Tesla T4",
-      "latency_s": 14.5
+      "latency_s": 21.1
     },
     "paths": [
       "outputs/music/m01_c1.wav"
     ],
-    "updated": "2026-11-25T19:55:11+00:00"
+    "updated": "2026-11-25T20:29:01+00:00"
   },
   "music:m01_c2": {
-    "hash": "ec6cf9c54f1ff6c4",
+    "hash": "ec4871f9a1dfa976",
     "meta": {
       "gpu": "Tesla T4",
-      "latency_s": 12.8
+      "latency_s": 21.1
     },
     "paths": [
       "outputs/music/m01_c2.wav"
     ],
-    "updated": "2026-11-25T19:55:11+00:00"
+    "updated": "2026-11-25T20:29:01+00:00"
   },
   "music:m02_c0": {
-    "hash": "00b143b5d4f54527",
+    "hash": "cc0fd938d73f90f4",
     "meta": {
       "gpu": "Tesla T4",
-      "latency_s": 12.9
+      "latency_s": 19.4
     },
     "paths": [
       "outputs/music/m02_c0.wav"
     ],
-    "updated": "2026-11-25T19:55:11+00:00"
+    "updated": "2026-11-25T20:29:02+00:00"
   },
   "music:m02_c1": {
-    "hash": "07ec1ffb6008938d",
+    "hash": "071bff4c3753c777",
     "meta": {
       "gpu": "Tesla T4",
-      "latency_s": 12.7
+      "latency_s": 19.7
     },
     "paths": [
       "outputs/music/m02_c1.wav"
     ],
-    "updated": "2026-11-25T19:55:11+00:00"
+    "updated": "2026-11-25T20:29:02+00:00"
   },
   "music:m02_c2": {
-    "hash": "094bd63be42a6e03",
+    "hash": "1410854b243d5e96",
     "meta": {
       "gpu": "Tesla T4",
-      "latency_s": 12.5
+      "latency_s": 19.9
     },
     "paths": [
       "outputs/music/m02_c2.wav"
     ],
-    "updated": "2026-11-25T19:55:11+00:00"
+    "updated": "2026-11-25T20:29:02+00:00"
   },
   "music:m03_c0": {
-    "hash": "d268646ae84723c3",
+    "hash": "c995b23fd252986d",
     "meta": {
       "gpu": "Tesla T4",
-      "latency_s": 14.3
+      "latency_s": 26.6
     },
     "paths": [
       "outputs/music/m03_c0.wav"
     ],
-    "updated": "2026-11-25T19:55:11+00:00"
+    "updated": "2026-11-25T20:29:02+00:00"
   },
   "music:m03_c1": {
-    "hash": "102cab44f0843dea",
+    "hash": "8f97a78c2d5f1980",
     "meta": {
       "gpu": "Tesla T4",
-      "latency_s": 14.4
+      "latency_s": 26.1
     },
     "paths": [
       "outputs/music/m03_c1.wav"
     ],
-    "updated": "2026-11-25T19:55:11+00:00"
+    "updated": "2026-11-25T20:29:02+00:00"
   },
   "music:m03_c2": {
-    "hash": "1c969cf5c885ebfe",
+    "hash": "72bd2f0c19eeab48",
     "meta": {
       "gpu": "Tesla T4",
-      "latency_s": 14.3
+      "latency_s": 26.2
     },
     "paths": [
       "outputs/music/m03_c2.wav"
     ],
-    "updated": "2026-11-25T19:55:11+00:00"
+    "updated": "2026-11-25T20:29:02+00:00"
   },
   "narration:s01": {
     "hash": "abf61777b3e673f0",
