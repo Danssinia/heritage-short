@@ -1,17 +1,17 @@
 {
   "final:horizontal": {
-    "hash": "4fe9963e2ad5b7fb",
+    "hash": "9f955aa11ea3a14e",
     "paths": [
       "outputs/final/heritage_horizontal_16x9.mp4"
     ],
-    "updated": "2026-11-26T12:42:14+00:00"
+    "updated": "2026-11-26T13:07:05+00:00"
   },
   "final:vertical": {
-    "hash": "d911d7ce894de679",
+    "hash": "dfb0daca2c5e7a23",
     "paths": [
       "outputs/final/heritage_vertical_9x16.mp4"
     ],
-    "updated": "2026-11-26T12:44:39+00:00"
+    "updated": "2026-11-26T13:09:51+00:00"
   },
   "keyframe:s01": {
     "hash": "69487269b58f339f",
@@ -230,12 +230,12 @@
     "updated": "2026-11-25T19:16:26+00:00"
   },
   "mix:film": {
-    "hash": "7cd1acec3d7c3565",
+    "hash": "f0eee7190de2e36b",
     "paths": [
       "outputs/cuts/audio/film_mix.wav",
       "outputs/cuts/audio/film_mix.json"
     ],
-    "updated": "2026-11-26T02:53:56+00:00"
+    "updated": "2026-11-26T13:04:41+00:00"
   },
   "mix:radio": {
     "hash": "940129e215e270eb",
@@ -623,198 +623,198 @@
     "updated": "2026-11-25T18:07:51+00:00"
   },
   "segment:horizontal:end_card": {
-    "hash": "f25f85e8d9bfe8a0",
+    "hash": "1e166a09ab091269",
     "paths": [
       "outputs/cuts/horizontal/end_card.mp4"
     ],
-    "updated": "2026-11-26T08:35:00+00:00"
+    "updated": "2026-11-26T13:05:16+00:00"
   },
   "segment:horizontal:s01": {
-    "hash": "539e92b083b1510d",
+    "hash": "c1c9cb81463e3bb9",
     "meta": {
       "kind": "clip"
     },
     "paths": [
       "outputs/cuts/horizontal/s01.mp4"
     ],
-    "updated": "2026-11-26T12:40:09+00:00"
+    "updated": "2026-11-26T13:04:44+00:00"
   },
   "segment:horizontal:s02": {
-    "hash": "f766238d1be3d7d9",
+    "hash": "382217820b3f126e",
     "meta": {
       "kind": "clip"
     },
     "paths": [
       "outputs/cuts/horizontal/s02.mp4"
     ],
-    "updated": "2026-11-26T12:40:12+00:00"
+    "updated": "2026-11-26T13:04:48+00:00"
   },
   "segment:horizontal:s03": {
-    "hash": "cfd0bfc3fe656c8a",
+    "hash": "44beef36ed8973c8",
     "meta": {
       "kind": "clip"
     },
     "paths": [
       "outputs/cuts/horizontal/s03.mp4"
     ],
-    "updated": "2026-11-26T02:46:38+00:00"
+    "updated": "2026-11-26T13:04:51+00:00"
   },
   "segment:horizontal:s04": {
-    "hash": "2564d59d44bc3628",
+    "hash": "c1e460df8e8fd297",
     "meta": {
       "kind": "clip"
     },
     "paths": [
       "outputs/cuts/horizontal/s04.mp4"
     ],
-    "updated": "2026-11-26T02:46:41+00:00"
+    "updated": "2026-11-26T13:04:54+00:00"
   },
   "segment:horizontal:s05": {
-    "hash": "628d6c1345258a75",
+    "hash": "ad1962dd1d8472d0",
     "meta": {
       "kind": "clip"
     },
     "paths": [
       "outputs/cuts/horizontal/s05.mp4"
     ],
-    "updated": "2026-11-26T02:46:43+00:00"
+    "updated": "2026-11-26T13:04:57+00:00"
   },
   "segment:horizontal:s06": {
-    "hash": "1baff26eb957e3a4",
+    "hash": "93957e57b9f93eb9",
     "meta": {
       "kind": "clip"
     },
     "paths": [
       "outputs/cuts/horizontal/s06.mp4"
     ],
-    "updated": "2026-11-26T12:40:15+00:00"
+    "updated": "2026-11-26T13:05:01+00:00"
   },
   "segment:horizontal:s07": {
-    "hash": "3dda3c9dcf95fff0",
+    "hash": "445d985899dc424b",
     "meta": {
       "kind": "clip"
     },
     "paths": [
       "outputs/cuts/horizontal/s07.mp4"
     ],
-    "updated": "2026-11-26T08:58:15+00:00"
+    "updated": "2026-11-26T13:05:05+00:00"
   },
   "segment:horizontal:s08": {
-    "hash": "34a2f68e65ee5fae",
+    "hash": "da997b88184f8ebb",
     "meta": {
       "kind": "clip"
     },
     "paths": [
       "outputs/cuts/horizontal/s08.mp4"
     ],
-    "updated": "2026-11-26T12:40:18+00:00"
+    "updated": "2026-11-26T13:05:11+00:00"
   },
   "segment:horizontal:s09": {
-    "hash": "30554af069e472f5",
+    "hash": "aea870cc73e1f47f",
     "meta": {
       "kind": "clip"
     },
     "paths": [
       "outputs/cuts/horizontal/s09.mp4"
     ],
-    "updated": "2026-11-26T12:40:20+00:00"
+    "updated": "2026-11-26T13:05:15+00:00"
   },
   "segment:vertical:end_card": {
-    "hash": "7bd34650596ba325",
+    "hash": "0f7c519ee6bf0569",
     "paths": [
       "outputs/cuts/vertical/end_card.mp4"
     ],
-    "updated": "2026-11-26T08:36:47+00:00"
+    "updated": "2026-11-26T13:08:17+00:00"
   },
   "segment:vertical:s01": {
-    "hash": "2e6598bb7d864c3f",
+    "hash": "3dad8093eca0442b",
     "meta": {
       "kind": "clip"
     },
     "paths": [
       "outputs/cuts/vertical/s01.mp4"
     ],
-    "updated": "2026-11-26T12:42:20+00:00"
+    "updated": "2026-11-26T13:07:12+00:00"
   },
   "segment:vertical:s02": {
-    "hash": "4d70e93776e7fe30",
+    "hash": "39135e4cae0442eb",
     "meta": {
       "kind": "clip"
     },
     "paths": [
       "outputs/cuts/vertical/s02.mp4"
     ],
-    "updated": "2026-11-26T12:42:24+00:00"
+    "updated": "2026-11-26T13:07:20+00:00"
   },
   "segment:vertical:s03": {
-    "hash": "3e8fe648ae756938",
+    "hash": "8e86aad2503700b4",
     "meta": {
       "kind": "clip"
     },
     "paths": [
       "outputs/cuts/vertical/s03.mp4"
     ],
-    "updated": "2026-11-26T02:48:59+00:00"
+    "updated": "2026-11-26T13:07:26+00:00"
   },
   "segment:vertical:s04": {
-    "hash": "12d34bd831d7c10b",
+    "hash": "a8d988dcf24d211b",
     "meta": {
       "kind": "clip"
     },
     "paths": [
       "outputs/cuts/vertical/s04.mp4"
     ],
-    "updated": "2026-11-26T02:49:02+00:00"
+    "updated": "2026-11-26T13:07:34+00:00"
   },
   "segment:vertical:s05": {
-    "hash": "ad6c19eb3122f1c2",
+    "hash": "4339bef8be57d367",
     "meta": {
       "kind": "clip"
     },
     "paths": [
       "outputs/cuts/vertical/s05.mp4"
     ],
-    "updated": "2026-11-26T02:49:05+00:00"
+    "updated": "2026-11-26T13:07:40+00:00"
   },
   "segment:vertical:s06": {
-    "hash": "327ea09f0daf5c12",
+    "hash": "2553ea6ac6a9e44c",
     "meta": {
       "kind": "clip"
     },
     "paths": [
       "outputs/cuts/vertical/s06.mp4"
     ],
-    "updated": "2026-11-26T12:42:28+00:00"
+    "updated": "2026-11-26T13:07:47+00:00"
   },
   "segment:vertical:s07": {
-    "hash": "f62871939405f7a5",
+    "hash": "be1188cc70d80339",
     "meta": {
       "kind": "clip"
     },
     "paths": [
       "outputs/cuts/vertical/s07.mp4"
     ],
-    "updated": "2026-11-26T09:00:21+00:00"
+    "updated": "2026-11-26T13:07:55+00:00"
   },
   "segment:vertical:s08": {
-    "hash": "9e1d6649d0c208a0",
+    "hash": "7f6d38bc25369250",
     "meta": {
       "kind": "clip"
     },
     "paths": [
       "outputs/cuts/vertical/s08.mp4"
     ],
-    "updated": "2026-11-26T12:42:33+00:00"
+    "updated": "2026-11-26T13:08:07+00:00"
   },
   "segment:vertical:s09": {
-    "hash": "b3921c5b0b13b208",
+    "hash": "6f54721b5840eb21",
     "meta": {
       "kind": "clip"
     },
     "paths": [
       "outputs/cuts/vertical/s09.mp4"
     ],
-    "updated": "2026-11-26T12:42:40+00:00"
+    "updated": "2026-11-26T13:08:16+00:00"
   },
   "shots:s01": {
     "hash": "9b4e8418f375ee03",

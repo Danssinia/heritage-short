@@ -8,6 +8,7 @@ List-price equivalents use the prices in `pipeline/common/prices.py`, with their
 | Stage | Hardware / precision | Work | Time | Cost |
 |---|---|---|---|---|
 | Wan 2.2 TI2V-5B (shots) | Kaggle 2x T4, float16 | 9 clips, 640x352, 93 frames, 25 steps | 8.0 min per clip, 72 GPU-min + ~8 min setup (80 min total) | ~$0.42 list-price equivalent at $0.35/T4-hour, $0 paid |
+| Wan 2.2 TI2V-5B (shots), rerun of 5 (run 20261126T113645Z-6552a8) | Kaggle 2x T4, float16 | 5 clips (s01, s02, s06, s08, s09), 640x352, 93 frames, 25 steps | 7.8-7.9 min per clip, 39.3 GPU-min, 45.9 min kernel time | ~$0.23 list-price equivalent at $0.35/T4-hour, $0 paid |
 | ACE-Step 1.5 (music), run 1 | Kaggle T4, float16 | 9 takes (3 cues x 3) | 5.5 min from kernel push to complete (terminal log of make music); 133 s of generation in runs.jsonl | $0 paid; output unusable (see FAILURES.md F4) |
 | ACE-Step 1.5 (music), run 2 | Kaggle T4, bfloat16 (chosen by probe; float32 ran out of memory) | 9 takes | 3.4 min generation (202 s) + 2.2 min load and probe | $0 paid |
 

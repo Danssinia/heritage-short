@@ -45,17 +45,25 @@ Date: 25 November 2026 (evening) · Format: WhatsApp · File: `outputs/final/rad
 
 ## User test 2: near-final cut
 
-Date: 26 November 2026 · Version tested: the first full build (commit c55c0fa) · File: `outputs/final/heritage_vertical_9x16.mp4`
+Date: 26 November 2026 · Version tested by both: the first full build (commit c55c0fa), sent around 11:20 · File: `outputs/final/heritage_vertical_9x16.mp4`
 
 | Person | What they said (their words) | Where they reacted |
 |---|---|---|
 | Brother 1 | "What if we added a heartfelt note at the end, such as “In loving memory of our dad”? It could make Mom happy and give the piece a more personal, meaningful touch." | the end card |
-| TODO | TODO | TODO |
-| TODO | TODO | TODO |
+| Brother 2 | "The first one (horizontal) is better. On the second (vertical) video.. it is a little bit vibrating… and it is very zoomed and feels like some part of the video is cropped when you try to follow with story. In the middle of the video it turned dark out of nowhere for some instant of time" | vertical framing; a dark moment mid-film |
+| Mom | "it is really nice,,, i like it send me i will show it to your sisters" | the whole film; she wants to share it with family |
 
 **What changed because of it:**
 
 1. Following my brother's suggestion (our father has passed away), the end card now dedicates the film to him: "In loving memory of our dad, Abbaye." This also fits my mother's feedback in test 1 that she often shares this story with the family.
+2. Brother 2 found the vertical version too zoomed, cropped and shaky: every shot now uses blur_fill in 9:16
+   (the whole frame, enlarged ~1.7x instead of ~5.5x), and the slow drift on held frames is now computed on a
+   2x upscaled picture, because zoompan's whole-pixel rounding made it jump about 2 px every 4-5 frames
+   (measured on s06 in the vertical film: frame-to-frame jitter 2.3 px before, 0.3 px after).
+3. The dark moment mid-film was the old s06 clip (brightness down to 35/255 in outputs/shots_v1/s06.mp4);
+   it was regenerated in E7 and the new clip stays at 174-181/255. Frames every 0.5 s from 38 s to 48 s of
+   the current vertical film show no dark frame.
+4. My mother wants to share the film with my sisters: it is working as a family memory, the intent of the film.
 
 ## Questions to ask testers (keep them open)
 

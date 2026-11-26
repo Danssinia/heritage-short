@@ -173,7 +173,7 @@
         ]
       },
       "transition_in": { "type": "cut" },
-      "reframe_9x16": { "mode": "center_crop", "focus_x": 0.5 }
+      "reframe_9x16": { "mode": "blur_fill" }
     },
     {
       "id": "s03",
@@ -210,7 +210,7 @@
         ]
       },
       "transition_in": { "type": "cut" },
-      "reframe_9x16": { "mode": "center_crop", "focus_x": 0.5 }
+      "reframe_9x16": { "mode": "blur_fill" }
     },
     {
       "id": "s04",
@@ -247,7 +247,7 @@
         ]
       },
       "transition_in": { "type": "cut" },
-      "reframe_9x16": { "mode": "center_crop", "focus_x": 0.5 }
+      "reframe_9x16": { "mode": "blur_fill" }
     },
     {
       "id": "s05",
@@ -284,7 +284,7 @@
         ]
       },
       "transition_in": { "type": "crossfade", "duration_s": 0.6 },
-      "reframe_9x16": { "mode": "center_crop", "focus_x": 0.5 }
+      "reframe_9x16": { "mode": "blur_fill" }
     },
     {
       "id": "s06",
@@ -321,7 +321,7 @@
         ]
       },
       "transition_in": { "type": "crossfade", "duration_s": 0.6 },
-      "reframe_9x16": { "mode": "center_crop", "focus_x": 0.87 }
+      "reframe_9x16": { "mode": "blur_fill" }
     },
     {
       "id": "s07",
@@ -402,7 +402,7 @@
         ]
       },
       "transition_in": { "type": "cut" },
-      "reframe_9x16": { "mode": "center_crop", "focus_x": 0.5 }
+      "reframe_9x16": { "mode": "blur_fill" }
     },
     {
       "id": "s09",

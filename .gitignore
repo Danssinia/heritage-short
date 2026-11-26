@@ -24,3 +24,6 @@ outputs/final/heritage_*.mp4
 
 # backup of the first Wan clips (before the gentler-motion rerun)
 outputs/shots_v1/
+
+# local run log (rewritten by every make shots)
+shots.log

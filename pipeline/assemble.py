@@ -38,7 +38,7 @@ from .common.media import (SR, duration, ffmpeg, find_font, loudness_normalize, 
 from .keyframes import final_path as keyframe_path
 
 FPS = 24
-RENDER_VERSION = 3
+RENDER_VERSION = 4  # 4: hold drift upscaled 2x before zoompan (smooth, no shaking)
 MAX_SLOWDOWN = 1.25
 END_CARD_XFADE = 0.6
 
@@ -90,7 +90,9 @@ def master_filter(kind: str, shot: dict, src: Path | None, seconds: float, w: in
         vf = (f"trim=start={trim},setpts=PTS-STARTPTS,setpts={factor:.4f}*PTS,fps={FPS},"
               f"scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h},setsar=1")
         if hold > 0.04:
-            vf += (f",tpad=stop_mode=clone:stop_duration={hold + 0.2:.3f},"
+            # zoompan rounds its crop to whole input pixels; on a 1x input that made the hold drift jump
+            # ~2 px every few frames (user test 2: "vibrating"). Upscale 2x first, like the Ken Burns path.
+            vf += (f",tpad=stop_mode=clone:stop_duration={hold + 0.2:.3f},scale={w * 2}:{h * 2},"
                    f"zoompan=z='min(1+0.0005*on,1.10)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=1:s={w}x{h}:fps={FPS}")
         return ["-i", src], vf
     if kind == "ken_burns":

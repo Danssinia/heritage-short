@@ -93,12 +93,12 @@
   "final_measured": {
     "horizontal": {
       "file": "outputs/final/heritage_horizontal_16x9.mp4",
-      "lufs": "-14.23",
+      "lufs": "-14.26",
       "true_peak": "-1.55"
     },
     "vertical": {
       "file": "outputs/final/heritage_vertical_9x16.mp4",
-      "lufs": "-14.23",
+      "lufs": "-14.26",
       "true_peak": "-1.55"
     }
   }
