@@ -1,0 +1,105 @@
+{
+  "total_s": 80.95833333333333,
+  "shots": [
+    {
+      "id": "s01",
+      "start": 0.0,
+      "duration": 8,
+      "planned": 8,
+      "extended": false,
+      "source": "clip"
+    },
+    {
+      "id": "s02",
+      "start": 8.0,
+      "duration": 9,
+      "planned": 9,
+      "extended": false,
+      "source": "clip"
+    },
+    {
+      "id": "s03",
+      "start": 17.0,
+      "duration": 7,
+      "planned": 7,
+      "extended": false,
+      "source": "clip"
+    },
+    {
+      "id": "s04",
+      "start": 24.0,
+      "duration": 8,
+      "planned": 8,
+      "extended": false,
+      "source": "clip"
+    },
+    {
+      "id": "s05",
+      "start": 32.0,
+      "duration": 6,
+      "planned": 6,
+      "extended": false,
+      "source": "clip"
+    },
+    {
+      "id": "s06",
+      "start": 38.0,
+      "duration": 8,
+      "planned": 8,
+      "extended": false,
+      "source": "clip"
+    },
+    {
+      "id": "s07",
+      "start": 46.0,
+      "duration": 9,
+      "planned": 9,
+      "extended": false,
+      "source": "clip"
+    },
+    {
+      "id": "s08",
+      "start": 55.0,
+      "duration": 13.275,
+      "planned": 12,
+      "extended": true,
+      "source": "clip"
+    },
+    {
+      "id": "s09",
+      "start": 68.275,
+      "duration": 9.681,
+      "planned": 9,
+      "extended": true,
+      "source": "clip"
+    }
+  ],
+  "mix": {
+    "input_lufs": "-14.38",
+    "output_lufs": "-14.21",
+    "output_true_peak": "-2.00",
+    "target_lufs": -14,
+    "target_tp": -2,
+    "music_sources": [
+      "outputs/music/m01_c2.wav",
+      "outputs/music/m02_c1.wav",
+      "outputs/music/m03_c2.wav"
+    ]
+  },
+  "outputs": [
+    "outputs/final/heritage_horizontal_16x9.mp4",
+    "outputs/final/heritage_vertical_9x16.mp4"
+  ],
+  "final_measured": {
+    "horizontal": {
+      "file": "outputs/final/heritage_horizontal_16x9.mp4",
+      "lufs": "-14.23",
+      "true_peak": "-1.55"
+    },
+    "vertical": {
+      "file": "outputs/final/heritage_vertical_9x16.mp4",
+      "lufs": "-14.23",
+      "true_peak": "-1.55"
+    }
+  }
+}

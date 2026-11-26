@@ -457,7 +457,7 @@
         "instrumental": true,
         "seed": 410001,
         "candidates": 3,
-        "chosen_candidate": null,
+        "chosen_candidate": 2,
         "fade_in_s": 1.5,
         "fade_out_s": 1.5
       },
@@ -473,7 +473,7 @@
         "instrumental": true,
         "seed": 410002,
         "candidates": 3,
-        "chosen_candidate": null,
+        "chosen_candidate": 1,
         "fade_in_s": 1.0,
         "fade_out_s": 1.5
       },
@@ -489,7 +489,7 @@
         "instrumental": true,
         "seed": 410003,
         "candidates": 3,
-        "chosen_candidate": null,
+        "chosen_candidate": 2,
         "fade_in_s": 1.0,
         "fade_out_s": 3.0
       }
@@ -498,7 +498,7 @@
   },
   "mix": {
     "integrated_lufs": -14,
-    "true_peak_db": -1,
+    "true_peak_db": -2,
     "voice_lufs": -16,
     "music_lufs": -24
   },

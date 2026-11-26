@@ -343,15 +343,21 @@ def run() -> list[Path]:
         outputs.append(out)
         print(f"  {export['name']}: {out.relative_to(ROOT)} ({duration(out):.2f}s)")
     shutil.copy(paths["srt"], final_dir / "heritage.en.srt")
+    final_measured = {}
+    for export, o in zip(sb["exports"], outputs):
+        m = measure_loudness(o)  # the encoded MP4 (AAC), not the pre-encode WAV
+        final_measured[export["name"]] = {"file": str(o.relative_to(ROOT)), "lufs": m["input_i"], "true_peak": m["input_tp"]}
     report = {
         "total_s": t["total_f"] / FPS, "shots": [{**{k: s[k] for k in ("id", "start", "duration", "planned", "extended")},
                                                   "source": sources[s["id"]]} for s in t["shots"]],
         "mix": mix_report, "outputs": [str(o.relative_to(ROOT)) for o in outputs],
+        "final_measured": final_measured,
     }
     (final_dir / "assembly_report.json").write_text(json.dumps(report, indent=2))
     fallbacks = [k for k, v in sources.items() if v != "clip"]
     print(f"assemble: {report['total_s']:.1f}s film; loudness {mix_report['output_lufs']} LUFS, "
-          f"true peak {mix_report['output_true_peak']} dB; shots without a Wan clip: {', '.join(fallbacks) or 'none'}")
+          f"true peak {mix_report['output_true_peak']} dB; shots without a Wan clip: {', '.join(fallbacks) or 'none'}; "
+          "final MP4s: " + ", ".join(f"{k} {m['lufs']} LUFS / {m['true_peak']} dBTP" for k, m in final_measured.items()))
     return outputs
 
 
