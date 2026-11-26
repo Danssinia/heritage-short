@@ -63,6 +63,12 @@ Things worth recording if they happen:
 - Trade-off: lower resolution, upscaled in the edit.
 - Result after fix: 9/9 shots ok in float16, 8.0 min each (results.json, Kaggle version #2).
 
+### F6: True peak over the limit after AAC encoding (assemble, 26 Nov)
+- What broke: the mix was normalised to -14 LUFS / -1 dBTP, but the final MP4s measured -0.3 dBTP (from terminal output, ebur128).
+- Cause: AAC encoding happens after loudness normalisation and raised peaks by about 0.7 dB; assembly_report.json measured the WAV before encoding.
+- Fix: true_peak_db -2 before encoding, and the report now measures the final MP4s (commit c55c0fa).
+- Result: -14.23 LUFS, -1.55 dBTP in both final MP4s (assembly_report.json).
+
 ### F7: Wan 2.2 face artifacts and broken s09 (review of the first full build, 26 Nov)
 - What broke: watching the first full build (commit c55c0fa) on my phone, s01, s02 and s08 had distorted
   faces, s06 was dark and muddy, and s09 broke into coloured blocks before the end card; the vertical
