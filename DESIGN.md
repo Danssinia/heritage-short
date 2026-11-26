@@ -65,6 +65,9 @@ Date: 26 November 2026 · Version tested by both: the first full build (commit c
    the current vertical film show no dark frame.
 4. My mother wants to share the film with my sisters: it is working as a family memory, the intent of the film.
 
+Follow-up: I sent brother 2 the fixed vertical version (commit 8b4e1d5). His reply: "The second video looks much
+better now. It's steady and well-framed, making it easy to follow the story, and the lighting stays consistent throughout."
+
 ## Questions to ask testers (keep them open)
 
 - What happened in the story, in your own words?
