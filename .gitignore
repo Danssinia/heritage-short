@@ -21,3 +21,6 @@ outputs/smoke/
 outputs/narration/raw/
 # final films are too large for git (about 100 MB per build); share them outside the repo
 outputs/final/heritage_*.mp4
+
+# backup of the first Wan clips (before the gentler-motion rerun)
+outputs/shots_v1/

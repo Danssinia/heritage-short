@@ -62,3 +62,29 @@ Things worth recording if they happen:
   clips reduced to 640x352, 93 frames (4 s), 25 steps; GPU cleaned after every failure.
 - Trade-off: lower resolution, upscaled in the edit.
 - Result after fix: 9/9 shots ok in float16, 8.0 min each (results.json, Kaggle version #2).
+
+### F7: Wan 2.2 face artifacts and broken s09 (review of the first full build, 26 Nov)
+- What broke: watching the first full build (commit c55c0fa) on my phone, s01, s02 and s08 had distorted
+  faces, s06 was dark and muddy, and s09 broke into coloured blocks before the end card; the vertical
+  center crop cut people out of s06/s07 (my phone review; not in the files).
+- First fix: Ken Burns on the clean keyframes for s01, s02, s06, s08, s09 and blur_fill for s06/s07
+  (commit 4cec5a3; assembly_report.json then listed those five shots as "ken_burns"). I rejected it
+  because the shots lost their motion.
+- Second fix: regenerate the 5 shots with new seeds (+1000: 311001, 311002, 311006, 311008, 311009) and
+  gentle motion prompts with a static camera; s06 vertical framing changed to center_crop focus_x 0.87,
+  s07 stays blur_fill.
+- Result: TODO (pending: Kaggle shots run in progress).
+
+### F8: End card showed an empty box at each line end (assemble, 26 Nov)
+- What broke: every wrapped line of the end-card subtext ended in a box glyph (3 in the vertical film,
+  1 in the horizontal), seen on the last frame of both MP4s (from terminal output).
+- Cause: FFmpeg 8 drawtext renders the newline in a text file as a glyph.
+- Fix: one drawtext per line, each centred (`render_end_card` in pipeline/assemble.py, commit 33058f7).
+
+### F9: git push timed out with the rebuilt films (repository, 26 Nov)
+- What broke: git push failed three times with "HTTP 408 ... the remote end hung up unexpectedly" while
+  sending about 100 MB of rebuilt MP4s (53 MB + 47 MB) in one commit (from terminal output). The build
+  before (commit c55c0fa) had already pushed a 50.85 MB file with a GitHub large-file warning.
+- Fix: the final films (`outputs/final/heritage_*.mp4`) are gitignored (commit 33058f7) and rebuilt from
+  the repository by `make film-offline` (cached clips, no Kaggle). Publishing them as a GitHub Release:
+  TODO (not done yet).
