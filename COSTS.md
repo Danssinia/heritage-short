@@ -11,7 +11,22 @@ List-price equivalents use the prices in `pipeline/common/prices.py`, with their
 | ACE-Step 1.5 (music), run 1 | Kaggle T4, float16 | 9 takes (3 cues x 3) | 5.5 min from kernel push to complete (terminal log of make music); 133 s of generation in runs.jsonl | $0 paid; output unusable (see FAILURES.md F4) |
 | ACE-Step 1.5 (music), run 2 | Kaggle T4, bfloat16 (chosen by probe; float32 ran out of memory) | 9 takes | 3.4 min generation (202 s) + 2.2 min load and probe | $0 paid |
 
-Run `make costs` after the final build for the full per-stage table from runs.jsonl.
+## Per stage (`make costs`, all runs in runs.jsonl, 26 Nov after the final build)
+
+| Stage | Model | Calls (ok / failed) | Median latency (s) | Total latency (min) | GPU minutes | List-price equivalent (USD) |
+|---|---|---|---|---|---|---|
+| keyframes | @cf/black-forest-labs/flux-2-klein-4b | 18 / 0 | 10.33 | 3.8 | 0.0 | 0.0337 |
+| music | ACE-Step/acestep-v15-xl-turbo-diffusers | 18 / 0 | 19.55 | 5.6 | 5.6 | 0.0326 |
+| narration | gemini-3.8-flash-tts | 10 / 5 | 5.21 | 1.7 | 0.0 | 0.0116 |
+| references | @cf/black-forest-labs/flux-2-klein-4b | 24 / 0 | 14.81 | 5.7 | 0.0 | 0.0281 |
+| shots | Wan-AI/Wan2.2-TI2V-5B-Diffusers | 14 / 9 | 479.20 | 111.2 | 111.7 | 0.6515 |
+| smoke | @cf/black-forest-labs/flux-2-klein-4b | 4 / 0 | 5.77 | 0.4 | 0.0 | 0.0000 |
+| smoke | gemini-3.8-flash-tts | 4 / 0 | 2.80 | 0.3 | 0.0 | 0.0000 |
+
+Total: 106 calls, 117.3 GPU minutes, $0.7575 list-price equivalent (we paid $0).
+
+Failed calls: narration 5 = the Gemini 429 quota errors (FAILURES.md F2); shots 9 = the out-of-memory run
+(FAILURES.md F5). Shots include all three Wan runs: 9 failed, 9 ok, then 5 regenerated (FAILURES.md F7).
 
 ## Free tiers as actually found (fill in when you hit them)
 
