@@ -79,7 +79,7 @@ Things worth recording if they happen:
 - Second fix: regenerate the 5 shots with new seeds (+1000: 311001, 311002, 311006, 311008, 311009) and
   gentle motion prompts with a static camera; s06 vertical framing changed to center_crop focus_x 0.87,
   s07 stays blur_fill.
-- Result: TODO (pending: Kaggle shots run in progress).
+- Result: Regenerated s01, s02, s06, s08, s09 with new seeds and gentle motion prompts with a static camera (run 20261126T113645Z-6552a8, 5/5 ok, ~7.9 GPU-min each). On my phone review the new clips look better than the previous ones, with cleaner faces; all 9 shots now use Wan clips.
 
 ### F8: End card showed an empty box at each line end (assemble, 26 Nov)
 - What broke: every wrapped line of the end-card subtext ended in a box glyph (3 in the vertical film,

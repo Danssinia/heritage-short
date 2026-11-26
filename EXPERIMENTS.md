@@ -60,22 +60,23 @@ run_id or cache key, a file in `outputs/`, a measurement). Aim for ten. Keep fai
 - **Change:** `motion.mode` i2v → ken_burns on those five shots (commit 4cec5a3).
 - **Result (evidence):** assembly_report.json listed the five as "ken_burns" (0 new model calls); the face
   artifacts were gone, but the shots lost their motion (my review).
-- **Decision:** rejected; regenerate with Wan instead (E7).
+- **Decision:** Rejected Ken Burns for these shots; regenerated them instead (E7).
 
 ### E7: Gentle motion prompts, static camera, new seeds
 - **Hypothesis:** small, calm motion with a static camera keeps faces stable in Wan.
 - **Change:** s01, s02, s06, s08, s09: new motion prompts ending "faces stay steady, static camera", seeds
   +1000, `camera` static for s01 and s09; old clips backed up in outputs/shots_v1/ (not in git).
-- **Result (evidence):** TODO (pending: Kaggle shots run in progress).
-- **Decision:** TODO.
+- **Result (evidence):** Regenerated s01, s02, s06, s08, s09 with new seeds and gentle motion prompts with a static camera (run 20261126T113645Z-6552a8, 5/5 ok, ~7.9 GPU-min each). On my phone review the new clips look better than the previous ones, with cleaner faces; all 9 shots now use Wan clips.
+- **Decision:** Keep the new clips.
 
 ### E8: Vertical framing for s06 and s07
 - **Hypothesis:** a center crop can keep the people in a 9:16 frame.
 - **Change:** the center crop (focus_x 0.5) cut people out; s06 now center_crop focus_x 0.87 (Dad
   stands at about 855–1065 px of 1280; the crop is 405 px wide); s07 blur_fill because the two faces are
   about 780 px apart.
-- **Result (evidence):** TODO (pending).
-- **Decision:** TODO.
+- **Result (evidence):** s06 center_crop focus_x 0.87 and s07 blur_fill kept after reviewing the vertical
+  film on my phone.
+- **Decision:** keep both.
 
 ### E9: True-peak headroom for AAC
 - **Hypothesis:** normalising to -1 dBTP before encoding keeps the MP4 below -1 dBTP.

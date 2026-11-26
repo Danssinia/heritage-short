@@ -107,7 +107,7 @@
       "reason": "Establishes the home, the morning and the three of us together before anything goes wrong.",
       "duration_s": 8,
       "shot_size": "wide",
-      "camera": "push_in",
+      "camera": "static",
       "characters": ["dad", "mom", "me"],
       "location": "dining",
       "keyframe": {
@@ -117,9 +117,9 @@
         "chosen_candidate": 0
       },
       "motion": {
-        "mode": "ken_burns",
-        "prompt": "steam rises gently from the tea, the family eats calmly, camera pushes in very slowly",
-        "seed": 310001,
+        "mode": "i2v",
+        "prompt": "steam rises gently from the tea glasses, the family sits calmly and smiles softly, faces stay steady, static camera",
+        "seed": 311001,
         "clip_s": 4.0,
         "trim_head_s": 0.3,
         "fallback": "ken_burns",
@@ -154,9 +154,9 @@
         "chosen_candidate": 0
       },
       "motion": {
-        "mode": "ken_burns",
-        "prompt": "they laugh and whisper to each other, shoulders shaking with laughter, fixed camera",
-        "seed": 310002,
+        "mode": "i2v",
+        "prompt": "they smile and their shoulders shake gently with quiet laughter, faces stay steady, static camera",
+        "seed": 311002,
         "clip_s": 4.0,
         "trim_head_s": 0.3,
         "fallback": "ken_burns",
@@ -302,9 +302,9 @@
         "chosen_candidate": 0
       },
       "motion": {
-        "mode": "ken_burns",
-        "prompt": "he stands still and breathes slowly, curtains move slightly, fixed camera",
-        "seed": 310006,
+        "mode": "i2v",
+        "prompt": "he stands still in the doorway, the lace curtain moves slightly, faces stay steady, static camera",
+        "seed": 311006,
         "clip_s": 4.0,
         "trim_head_s": 0.3,
         "fallback": "ken_burns",
@@ -321,7 +321,7 @@
         ]
       },
       "transition_in": { "type": "crossfade", "duration_s": 0.6 },
-      "reframe_9x16": { "mode": "blur_fill" }
+      "reframe_9x16": { "mode": "center_crop", "focus_x": 0.87 }
     },
     {
       "id": "s07",
@@ -376,9 +376,9 @@
         "chosen_candidate": 0
       },
       "motion": {
-        "mode": "ken_burns",
-        "prompt": "he laughs, shakes his head and starts eating again, fixed camera",
-        "seed": 310008,
+        "mode": "i2v",
+        "prompt": "he smiles warmly and slowly lifts a piece of bread, small natural movement, faces stay steady, static camera",
+        "seed": 311008,
         "clip_s": 4.0,
         "trim_head_s": 0.3,
         "fallback": "ken_burns",
@@ -410,7 +410,7 @@
       "reason": "Brings the story to the audience's own table and states what it means to us now.",
       "duration_s": 9,
       "shot_size": "wide",
-      "camera": "pull_out",
+      "camera": "static",
       "characters": ["dad", "mom", "me"],
       "location": "dining",
       "keyframe": {
@@ -420,9 +420,9 @@
         "chosen_candidate": 1
       },
       "motion": {
-        "mode": "ken_burns",
-        "prompt": "the family laughs together, camera pulls back slowly",
-        "seed": 310009,
+        "mode": "i2v",
+        "prompt": "the family smiles together, steam rises from the tea, faces stay steady, static camera",
+        "seed": 311009,
         "clip_s": 4.0,
         "trim_head_s": 0.3,
         "fallback": "ken_burns",
