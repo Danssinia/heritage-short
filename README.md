@@ -4,6 +4,10 @@ A 60–90 second film about a real breakfast in my family, narrated in **Amharic
 English subtitles and an original score, made entirely by a code pipeline from one
 contract file, [`storyboard.json`](storyboard.json).
 
+**Watch the film:** release page https://github.com/Danssinia/heritage-short/releases/tag/v1.0
+- Vertical (main): https://github.com/Danssinia/heritage-short/releases/download/v1.0/heritage_vertical_9x16.mp4
+- Horizontal: https://github.com/Danssinia/heritage-short/releases/download/v1.0/heritage_horizontal_16x9.mp4
+
 ```bash
 make setup     # once: virtualenv, dependencies, .env
 make film      # the whole pipeline: regenerates only what changed

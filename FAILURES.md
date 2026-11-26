@@ -92,5 +92,5 @@ Things worth recording if they happen:
   sending about 100 MB of rebuilt MP4s (53 MB + 47 MB) in one commit (from terminal output). The build
   before (commit c55c0fa) had already pushed a 50.85 MB file with a GitHub large-file warning.
 - Fix: the final films (`outputs/final/heritage_*.mp4`) are gitignored (commit 33058f7) and rebuilt from
-  the repository by `make film-offline` (cached clips, no Kaggle). Publishing them as a GitHub Release:
-  TODO (not done yet).
+  the repository by `make film-offline` (cached clips, no Kaggle). They are
+  published as release v1.0.
