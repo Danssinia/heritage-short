@@ -82,6 +82,22 @@ Imports are matched by shot id **and** input hash, so results from an old storyb
   (Ken Burns over the keyframe, or a still). A missing keyframe becomes a labelled placeholder,
   so the film always assembles end to end.
 
+## Reproducibility check
+
+On 26 November 2026 a fresh clone of commit 8b4e1d5 rebuilt the film with no model calls:
+
+```
+git clone https://github.com/Danssinia/heritage-short.git /tmp/heritage-check && cd /tmp/heritage-check
+make setup          # .env is created from .env.example; no real keys are needed
+make film-offline
+```
+
+Result: finished in 355 s with "New model calls this run: 0"; both films 80.96 s
+(`heritage_horizontal_16x9.mp4` 1920x1080, `heritage_vertical_9x16.mp4` 1080x1920), all 9 shots from
+the committed Wan clips, -14.26 LUFS / -1.55 dBTP, and `outputs/final/assembly_report.json` identical to
+the original build. Nothing outside the repository was needed: the private photos in `private/` are not in
+the clone, and the references stage keeps the committed candidates (it prints a note for each missing photo).
+
 ## Repository map
 
 ```
