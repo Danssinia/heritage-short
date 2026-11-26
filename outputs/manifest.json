@@ -599,5 +599,176 @@
       "outputs/references/wash_corner_c2.png"
     ],
     "updated": "2026-11-25T18:07:51+00:00"
+  },
+  "shots:s01": {
+    "hash": "449cdba3ccb536b2",
+    "meta": {
+      "gpu": "2x Tesla T4",
+      "latency_s": 478.2
+    },
+    "paths": [
+      "outputs/shots/s01.mp4"
+    ],
+    "updated": "2026-11-25T22:21:33+00:00"
+  },
+  "shots:s02": {
+    "hash": "4050a742a1285797",
+    "meta": {
+      "gpu": "2x Tesla T4",
+      "latency_s": 480.9
+    },
+    "paths": [
+      "outputs/shots/s02.mp4"
+    ],
+    "updated": "2026-11-25T22:21:33+00:00"
+  },
+  "shots:s03": {
+    "hash": "1a1423120308d3d8",
+    "meta": {
+      "gpu": "2x Tesla T4",
+      "latency_s": 480.8
+    },
+    "paths": [
+      "outputs/shots/s03.mp4"
+    ],
+    "updated": "2026-11-25T22:21:33+00:00"
+  },
+  "shots:s04": {
+    "hash": "2a1ee4d1a220268f",
+    "meta": {
+      "gpu": "2x Tesla T4",
+      "latency_s": 479.9
+    },
+    "paths": [
+      "outputs/shots/s04.mp4"
+    ],
+    "updated": "2026-11-25T22:21:33+00:00"
+  },
+  "shots:s05": {
+    "hash": "bb58320b7eac5f40",
+    "meta": {
+      "gpu": "2x Tesla T4",
+      "latency_s": 479.6
+    },
+    "paths": [
+      "outputs/shots/s05.mp4"
+    ],
+    "updated": "2026-11-25T22:21:33+00:00"
+  },
+  "shots:s06": {
+    "hash": "8962421dabbfca94",
+    "meta": {
+      "gpu": "2x Tesla T4",
+      "latency_s": 479.4
+    },
+    "paths": [
+      "outputs/shots/s06.mp4"
+    ],
+    "updated": "2026-11-25T22:21:33+00:00"
+  },
+  "shots:s07": {
+    "hash": "5389b79cd9817589",
+    "meta": {
+      "gpu": "2x Tesla T4",
+      "latency_s": 479.2
+    },
+    "paths": [
+      "outputs/shots/s07.mp4"
+    ],
+    "updated": "2026-11-25T22:21:33+00:00"
+  },
+  "shots:s08": {
+    "hash": "da0c93102893a747",
+    "meta": {
+      "gpu": "2x Tesla T4",
+      "latency_s": 479.2
+    },
+    "paths": [
+      "outputs/shots/s08.mp4"
+    ],
+    "updated": "2026-11-25T22:21:33+00:00"
+  },
+  "shots:s09": {
+    "hash": "63608cd0550c7487",
+    "meta": {
+      "gpu": "2x Tesla T4",
+      "latency_s": 479.6
+    },
+    "paths": [
+      "outputs/shots/s09.mp4"
+    ],
+    "updated": "2026-11-25T22:21:33+00:00"
+  },
+  "shots_fail:s01": {
+    "hash": "1566f5c57511bc35",
+    "meta": {
+      "count": 1
+    },
+    "paths": [],
+    "updated": "2026-11-25T20:43:21+00:00"
+  },
+  "shots_fail:s02": {
+    "hash": "299569eec513b208",
+    "meta": {
+      "count": 1
+    },
+    "paths": [],
+    "updated": "2026-11-25T20:43:21+00:00"
+  },
+  "shots_fail:s03": {
+    "hash": "967b3b279b6eeed6",
+    "meta": {
+      "count": 1
+    },
+    "paths": [],
+    "updated": "2026-11-25T20:43:21+00:00"
+  },
+  "shots_fail:s04": {
+    "hash": "a69cf70c6be81fb5",
+    "meta": {
+      "count": 1
+    },
+    "paths": [],
+    "updated": "2026-11-25T20:43:21+00:00"
+  },
+  "shots_fail:s05": {
+    "hash": "37c1f06e3ea5348f",
+    "meta": {
+      "count": 1
+    },
+    "paths": [],
+    "updated": "2026-11-25T20:43:21+00:00"
+  },
+  "shots_fail:s06": {
+    "hash": "44a33a377b289784",
+    "meta": {
+      "count": 1
+    },
+    "paths": [],
+    "updated": "2026-11-25T20:43:21+00:00"
+  },
+  "shots_fail:s07": {
+    "hash": "deee367b4baf82dc",
+    "meta": {
+      "count": 1
+    },
+    "paths": [],
+    "updated": "2026-11-25T20:43:21+00:00"
+  },
+  "shots_fail:s08": {
+    "hash": "2838edac7168cf8a",
+    "meta": {
+      "count": 1
+    },
+    "paths": [],
+    "updated": "2026-11-25T20:43:21+00:00"
+  },
+  "shots_fail:s09": {
+    "hash": "d608c3fe01d70503",
+    "meta": {
+      "count": 1
+    },
+    "paths": [],
+    "updated": "2026-11-25T20:43:21+00:00"
   }
 }

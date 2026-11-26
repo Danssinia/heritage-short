@@ -81,10 +81,10 @@
     "shot": {
       "provider": "kaggle",
       "model": "Wan-AI/Wan2.2-TI2V-5B-Diffusers",
-      "width": 832,
-      "height": 480,
+      "width": 640,
+      "height": 352,
       "fps": 24,
-      "steps": 30,
+      "steps": 25,
       "guidance": 5.0,
       "dtype": "auto",
       "max_attempts": 2
@@ -120,7 +120,7 @@
         "mode": "i2v",
         "prompt": "steam rises gently from the tea, the family eats calmly, camera pushes in very slowly",
         "seed": 310001,
-        "clip_s": 5.0,
+        "clip_s": 4.0,
         "trim_head_s": 0.3,
         "fallback": "ken_burns",
         "ken_burns": { "zoom_from": 1.0, "zoom_to": 1.1, "pan": "none" }
@@ -157,7 +157,7 @@
         "mode": "i2v",
         "prompt": "they laugh and whisper to each other, shoulders shaking with laughter, fixed camera",
         "seed": 310002,
-        "clip_s": 5.0,
+        "clip_s": 4.0,
         "trim_head_s": 0.3,
         "fallback": "ken_burns",
         "ken_burns": { "zoom_from": 1.05, "zoom_to": 1.0, "pan": "none" }
@@ -194,7 +194,7 @@
         "mode": "i2v",
         "prompt": "he slowly puts down the bread and frowns, camera pushes in slightly",
         "seed": 310003,
-        "clip_s": 5.0,
+        "clip_s": 4.0,
         "trim_head_s": 0.3,
         "fallback": "ken_burns",
         "ken_burns": { "zoom_from": 1.0, "zoom_to": 1.15, "pan": "none" }
@@ -231,7 +231,7 @@
         "mode": "i2v",
         "prompt": "steam fades slowly from the tea glass, the room is still, fixed camera",
         "seed": 310004,
-        "clip_s": 5.0,
+        "clip_s": 4.0,
         "trim_head_s": 0.3,
         "fallback": "ken_burns",
         "ken_burns": { "zoom_from": 1.1, "zoom_to": 1.0, "pan": "none" }
@@ -268,7 +268,7 @@
         "mode": "i2v",
         "prompt": "water pours slowly over his hands into the basin, fixed camera",
         "seed": 310005,
-        "clip_s": 5.0,
+        "clip_s": 4.0,
         "trim_head_s": 0.3,
         "fallback": "ken_burns",
         "ken_burns": { "zoom_from": 1.0, "zoom_to": 1.08, "pan": "none" }
@@ -305,7 +305,7 @@
         "mode": "i2v",
         "prompt": "he stands still and breathes slowly, curtains move slightly, fixed camera",
         "seed": 310006,
-        "clip_s": 5.0,
+        "clip_s": 4.0,
         "trim_head_s": 0.3,
         "fallback": "ken_burns",
         "ken_burns": { "zoom_from": 1.0, "zoom_to": 1.1, "pan": "none" }
@@ -342,7 +342,7 @@
         "mode": "i2v",
         "prompt": "they look up and smile softly, the mother nods gently, fixed camera",
         "seed": 310007,
-        "clip_s": 5.0,
+        "clip_s": 4.0,
         "trim_head_s": 0.3,
         "fallback": "ken_burns",
         "ken_burns": { "zoom_from": 1.05, "zoom_to": 1.0, "pan": "none" }
@@ -379,7 +379,7 @@
         "mode": "i2v",
         "prompt": "he laughs, shakes his head and starts eating again, fixed camera",
         "seed": 310008,
-        "clip_s": 5.0,
+        "clip_s": 4.0,
         "trim_head_s": 0.3,
         "fallback": "ken_burns",
         "ken_burns": { "zoom_from": 1.0, "zoom_to": 1.08, "pan": "none" }
@@ -423,7 +423,7 @@
         "mode": "i2v",
         "prompt": "the family laughs together, camera pulls back slowly",
         "seed": 310009,
-        "clip_s": 5.0,
+        "clip_s": 4.0,
         "trim_head_s": 0.3,
         "fallback": "ken_burns",
         "ken_burns": { "zoom_from": 1.12, "zoom_to": 1.0, "pan": "none" }

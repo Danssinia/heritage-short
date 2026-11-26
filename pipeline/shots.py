@@ -31,7 +31,8 @@ def clip_path(shot_id: str) -> Path:
 
 def build_jobs(sb: dict, manifest: Manifest, only: list[str] | None = None, include_cached: bool = False):
     d = sb["defaults"]["shot"]
-    cfg = {"model": d["model"], "dtype": d["dtype"]}
+    # kernel 3 = text encoder run separately + memory cleanup after failures (T4 out-of-memory fix)
+    cfg = {"model": d["model"], "dtype": d["dtype"], "kernel": 3}
     items, files, expected, skipped = [], [], {}, []
     for shot in sb["shots"]:
         sid, m = shot["id"], shot["motion"]
