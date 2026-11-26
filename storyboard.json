@@ -117,7 +117,7 @@
         "chosen_candidate": 0
       },
       "motion": {
-        "mode": "i2v",
+        "mode": "ken_burns",
         "prompt": "steam rises gently from the tea, the family eats calmly, camera pushes in very slowly",
         "seed": 310001,
         "clip_s": 4.0,
@@ -154,7 +154,7 @@
         "chosen_candidate": 0
       },
       "motion": {
-        "mode": "i2v",
+        "mode": "ken_burns",
         "prompt": "they laugh and whisper to each other, shoulders shaking with laughter, fixed camera",
         "seed": 310002,
         "clip_s": 4.0,
@@ -302,7 +302,7 @@
         "chosen_candidate": 0
       },
       "motion": {
-        "mode": "i2v",
+        "mode": "ken_burns",
         "prompt": "he stands still and breathes slowly, curtains move slightly, fixed camera",
         "seed": 310006,
         "clip_s": 4.0,
@@ -321,7 +321,7 @@
         ]
       },
       "transition_in": { "type": "crossfade", "duration_s": 0.6 },
-      "reframe_9x16": { "mode": "center_crop", "focus_x": 0.5 }
+      "reframe_9x16": { "mode": "blur_fill" }
     },
     {
       "id": "s07",
@@ -358,7 +358,7 @@
         ]
       },
       "transition_in": { "type": "cut" },
-      "reframe_9x16": { "mode": "center_crop", "focus_x": 0.5 }
+      "reframe_9x16": { "mode": "blur_fill" }
     },
     {
       "id": "s08",
@@ -376,7 +376,7 @@
         "chosen_candidate": 0
       },
       "motion": {
-        "mode": "i2v",
+        "mode": "ken_burns",
         "prompt": "he laughs, shakes his head and starts eating again, fixed camera",
         "seed": 310008,
         "clip_s": 4.0,
@@ -420,7 +420,7 @@
         "chosen_candidate": 1
       },
       "motion": {
-        "mode": "i2v",
+        "mode": "ken_burns",
         "prompt": "the family laughs together, camera pulls back slowly",
         "seed": 310009,
         "clip_s": 4.0,

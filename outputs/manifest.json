@@ -1,17 +1,17 @@
 {
   "final:horizontal": {
-    "hash": "21cfa3b05eb69657",
+    "hash": "4814cd9bc9e9035d",
     "paths": [
       "outputs/final/heritage_horizontal_16x9.mp4"
     ],
-    "updated": "2026-11-26T08:36:46+00:00"
+    "updated": "2026-11-26T08:59:58+00:00"
   },
   "final:vertical": {
-    "hash": "0bdd8eff1bf4316c",
+    "hash": "83698f6ab431ac00",
     "paths": [
       "outputs/final/heritage_vertical_9x16.mp4"
     ],
-    "updated": "2026-11-26T08:38:39+00:00"
+    "updated": "2026-11-26T09:02:12+00:00"
   },
   "keyframe:s01": {
     "hash": "69487269b58f339f",
@@ -630,24 +630,24 @@
     "updated": "2026-11-26T08:35:00+00:00"
   },
   "segment:horizontal:s01": {
-    "hash": "4459484a0b186ed1",
+    "hash": "03c639b124d5dad5",
     "meta": {
-      "kind": "clip"
+      "kind": "ken_burns"
     },
     "paths": [
       "outputs/cuts/horizontal/s01.mp4"
     ],
-    "updated": "2026-11-26T02:46:33+00:00"
+    "updated": "2026-11-26T08:58:07+00:00"
   },
   "segment:horizontal:s02": {
-    "hash": "dbedc01a685ef63f",
+    "hash": "e3669bfac6b83975",
     "meta": {
-      "kind": "clip"
+      "kind": "ken_burns"
     },
     "paths": [
       "outputs/cuts/horizontal/s02.mp4"
     ],
-    "updated": "2026-11-26T02:46:36+00:00"
+    "updated": "2026-11-26T08:58:10+00:00"
   },
   "segment:horizontal:s03": {
     "hash": "cfd0bfc3fe656c8a",
@@ -680,44 +680,44 @@
     "updated": "2026-11-26T02:46:43+00:00"
   },
   "segment:horizontal:s06": {
-    "hash": "393e9a1ebefadb59",
+    "hash": "6e1cfbef215038a0",
     "meta": {
-      "kind": "clip"
+      "kind": "ken_burns"
     },
     "paths": [
       "outputs/cuts/horizontal/s06.mp4"
     ],
-    "updated": "2026-11-26T02:46:45+00:00"
+    "updated": "2026-11-26T08:58:12+00:00"
   },
   "segment:horizontal:s07": {
-    "hash": "ee6fcdc16a30156a",
+    "hash": "3dda3c9dcf95fff0",
     "meta": {
       "kind": "clip"
     },
     "paths": [
       "outputs/cuts/horizontal/s07.mp4"
     ],
-    "updated": "2026-11-26T02:46:49+00:00"
+    "updated": "2026-11-26T08:58:15+00:00"
   },
   "segment:horizontal:s08": {
-    "hash": "4b36b024f9565520",
+    "hash": "1dc2b373587b26b8",
     "meta": {
-      "kind": "clip"
+      "kind": "ken_burns"
     },
     "paths": [
       "outputs/cuts/horizontal/s08.mp4"
     ],
-    "updated": "2026-11-26T02:46:53+00:00"
+    "updated": "2026-11-26T08:58:19+00:00"
   },
   "segment:horizontal:s09": {
-    "hash": "4627952ad75030e7",
+    "hash": "f04c9cf4adc4b6ce",
     "meta": {
-      "kind": "clip"
+      "kind": "ken_burns"
     },
     "paths": [
       "outputs/cuts/horizontal/s09.mp4"
     ],
-    "updated": "2026-11-26T02:46:57+00:00"
+    "updated": "2026-11-26T08:58:22+00:00"
   },
   "segment:vertical:end_card": {
     "hash": "7bd34650596ba325",
@@ -727,24 +727,24 @@
     "updated": "2026-11-26T08:36:47+00:00"
   },
   "segment:vertical:s01": {
-    "hash": "abc1d8bb97238c7a",
+    "hash": "6f3fcd4bac627ff1",
     "meta": {
-      "kind": "clip"
+      "kind": "ken_burns"
     },
     "paths": [
       "outputs/cuts/vertical/s01.mp4"
     ],
-    "updated": "2026-11-26T02:48:51+00:00"
+    "updated": "2026-11-26T09:00:05+00:00"
   },
   "segment:vertical:s02": {
-    "hash": "0e71c87137c2d9a6",
+    "hash": "cfe05e326f810515",
     "meta": {
-      "kind": "clip"
+      "kind": "ken_burns"
     },
     "paths": [
       "outputs/cuts/vertical/s02.mp4"
     ],
-    "updated": "2026-11-26T02:48:55+00:00"
+    "updated": "2026-11-26T09:00:07+00:00"
   },
   "segment:vertical:s03": {
     "hash": "3e8fe648ae756938",
@@ -777,44 +777,44 @@
     "updated": "2026-11-26T02:49:05+00:00"
   },
   "segment:vertical:s06": {
-    "hash": "7a998e155b3b11f6",
+    "hash": "a4ce86cfc55359dc",
     "meta": {
-      "kind": "clip"
+      "kind": "ken_burns"
     },
     "paths": [
       "outputs/cuts/vertical/s06.mp4"
     ],
-    "updated": "2026-11-26T02:49:09+00:00"
+    "updated": "2026-11-26T09:00:14+00:00"
   },
   "segment:vertical:s07": {
-    "hash": "cbb1c8d6bee48431",
+    "hash": "f62871939405f7a5",
     "meta": {
       "kind": "clip"
     },
     "paths": [
       "outputs/cuts/vertical/s07.mp4"
     ],
-    "updated": "2026-11-26T02:49:12+00:00"
+    "updated": "2026-11-26T09:00:21+00:00"
   },
   "segment:vertical:s08": {
-    "hash": "417d9621902323fe",
+    "hash": "c6356ce1ceae16ac",
     "meta": {
-      "kind": "clip"
+      "kind": "ken_burns"
     },
     "paths": [
       "outputs/cuts/vertical/s08.mp4"
     ],
-    "updated": "2026-11-26T02:49:17+00:00"
+    "updated": "2026-11-26T09:00:26+00:00"
   },
   "segment:vertical:s09": {
-    "hash": "5691e97f60dab33d",
+    "hash": "d3563769ef35d617",
     "meta": {
-      "kind": "clip"
+      "kind": "ken_burns"
     },
     "paths": [
       "outputs/cuts/vertical/s09.mp4"
     ],
-    "updated": "2026-11-26T02:49:24+00:00"
+    "updated": "2026-11-26T09:00:34+00:00"
   },
   "shots:s01": {
     "hash": "449cdba3ccb536b2",

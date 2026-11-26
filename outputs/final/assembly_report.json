@@ -7,7 +7,7 @@
       "duration": 8,
       "planned": 8,
       "extended": false,
-      "source": "clip"
+      "source": "ken_burns"
     },
     {
       "id": "s02",
@@ -15,7 +15,7 @@
       "duration": 9,
       "planned": 9,
       "extended": false,
-      "source": "clip"
+      "source": "ken_burns"
     },
     {
       "id": "s03",
@@ -47,7 +47,7 @@
       "duration": 8,
       "planned": 8,
       "extended": false,
-      "source": "clip"
+      "source": "ken_burns"
     },
     {
       "id": "s07",
@@ -63,7 +63,7 @@
       "duration": 13.275,
       "planned": 12,
       "extended": true,
-      "source": "clip"
+      "source": "ken_burns"
     },
     {
       "id": "s09",
@@ -71,7 +71,7 @@
       "duration": 9.681,
       "planned": 9,
       "extended": true,
-      "source": "clip"
+      "source": "ken_burns"
     }
   ],
   "mix": {
