@@ -1,17 +1,17 @@
 {
   "final:horizontal": {
-    "hash": "982bb09e2d590a4a",
+    "hash": "21cfa3b05eb69657",
     "paths": [
       "outputs/final/heritage_horizontal_16x9.mp4"
     ],
-    "updated": "2026-11-26T02:55:37+00:00"
+    "updated": "2026-11-26T08:36:46+00:00"
   },
   "final:vertical": {
-    "hash": "13d4c76eaee6cfc6",
+    "hash": "0bdd8eff1bf4316c",
     "paths": [
       "outputs/final/heritage_vertical_9x16.mp4"
     ],
-    "updated": "2026-11-26T02:57:25+00:00"
+    "updated": "2026-11-26T08:38:39+00:00"
   },
   "keyframe:s01": {
     "hash": "69487269b58f339f",
@@ -623,11 +623,11 @@
     "updated": "2026-11-25T18:07:51+00:00"
   },
   "segment:horizontal:end_card": {
-    "hash": "42f566ee90aaa012",
+    "hash": "f25f85e8d9bfe8a0",
     "paths": [
       "outputs/cuts/horizontal/end_card.mp4"
     ],
-    "updated": "2026-11-26T02:46:57+00:00"
+    "updated": "2026-11-26T08:35:00+00:00"
   },
   "segment:horizontal:s01": {
     "hash": "4459484a0b186ed1",
@@ -720,11 +720,11 @@
     "updated": "2026-11-26T02:46:57+00:00"
   },
   "segment:vertical:end_card": {
-    "hash": "16bd6b99e670c3f1",
+    "hash": "7bd34650596ba325",
     "paths": [
       "outputs/cuts/vertical/end_card.mp4"
     ],
-    "updated": "2026-11-26T02:49:25+00:00"
+    "updated": "2026-11-26T08:36:47+00:00"
   },
   "segment:vertical:s01": {
     "hash": "abc1d8bb97238c7a",

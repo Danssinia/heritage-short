@@ -10,7 +10,8 @@
 - **Where:** on their phones, in the family group chat and on my social media, so the
   **vertical** version is the main one, with sound often on low.
 - **What they should feel or understand at the end:** they laugh at a moment they recognise,
-  and leave feeling that in our family a simple "sorry" is enough to bring someone back to the table.
+  remember our father with love, and leave feeling that in our family a simple "sorry" is enough to
+  bring someone back to the table.
 - **How might we:** how might we turn a two-minute family joke into something relatives far away
   can share and laugh at together?
 
@@ -30,32 +31,31 @@ the film (for example, the closing line in s09 and the food on the table).
 
 ## User test 1: radio cut (narration + placeholder music on black)
 
-Date: TODO · Format: TODO (in person / WhatsApp / Slack) · File: `outputs/final/radio_cut.mp4`
+Date: 25 November 2026 (evening) · Format: WhatsApp · File: `outputs/final/radio_cut.mp4`
 
-| Person (relationship, age range) | What they said (their words) | Where they reacted |
+| Person | What they said (their words) | Where they reacted |
 |---|---|---|
-| TODO | TODO | TODO |
-| TODO | TODO | TODO |
-| TODO | TODO | TODO |
+| Brother 1 | "Honestly, I really love the story and the creativity behind this project. The video generation is impressive, but what amazed me most is the audio — it sounds so natural and human-like, almost as if a real person is speaking. You're doing something really amazing. Keep pushing, this has great potential!" | the narration voice |
+| Brother 2 | Asked: What happened in the story? Which part made you laugh? Did you notice any incorrect Amharic words? Answer: "A son and his mom made dad angry by joking about things he dont like while he was eating his bf.. Then he gets angry… I am only eating for you😁 No incorrect word" | Dad's line in s08 |
+| Mom | She loved it and remembered it as if it had happened yesterday; she often shares the story with other family members. (paraphrased from her spoken reply) | the whole story |
 
-**What I will change because of it** (each change must show up in `storyboard.json` and its git history):
+**What I changed because of it:**
 
-1. TODO
-2. TODO
+1. Testers retold the story correctly, laughed at Dad's line and found no incorrect Amharic, so the narration lines and voices stay as they are (evidence that the Amharic script and the Puck/Charon voices work).
 
 ## User test 2: near-final cut
 
-Date: TODO · Version tested: TODO (git commit) · File: `outputs/final/heritage_vertical_9x16.mp4`
+Date: 26 November 2026 · Version tested: the first full build (commit c55c0fa) · File: `outputs/final/heritage_vertical_9x16.mp4`
 
-| Person | What they said | Where they reacted |
+| Person | What they said (their words) | Where they reacted |
 |---|---|---|
-| TODO | TODO | TODO |
+| Brother 1 | "What if we added a heartfelt note at the end, such as “In loving memory of our dad”? It could make Mom happy and give the piece a more personal, meaningful touch." | the end card |
 | TODO | TODO | TODO |
 | TODO | TODO | TODO |
 
 **What changed because of it:**
 
-1. TODO
+1. Following my brother's suggestion (our father has passed away), the end card now dedicates the film to him: "In loving memory of our dad, Abbaye." This also fits my mother's feedback in test 1 that she often shares this story with the family.
 
 ## Questions to ask testers (keep them open)
 

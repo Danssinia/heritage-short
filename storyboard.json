@@ -4,7 +4,7 @@
     "title": "I'm Only Eating for You",
     "logline": "One breakfast, my mother and I tease my father until he leaves the table; a smile and a 'sorry' bring him back, with a line our family still laughs about.",
     "audience": "My family and our relatives in Ethiopia and abroad, watching on their phones in the family group chat and on my social media.",
-    "intent": "They should laugh at a moment they recognise, and leave feeling that in our family a simple 'sorry' is enough to bring someone back to the table.",
+    "intent": "They should laugh at a moment they recognise, remember our father with love, and leave feeling that in our family a simple 'sorry' is enough to bring someone back to the table.",
     "narration_language": "am",
     "subtitle_language": "en",
     "target_duration_s": { "min": 60, "max": 90 }
@@ -511,7 +511,7 @@
   },
   "end_card": {
     "text": "Made with AI",
-    "subtext": "Pictures, voices and music generated with AI from a real family story, told with my family's consent.",
+    "subtext": "In loving memory of our dad, Abbaye. Pictures, voices and music made with AI from our family's story.",
     "duration_s": 3
   },
   "exports": [

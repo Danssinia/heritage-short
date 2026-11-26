@@ -149,20 +149,24 @@ def render_end_card(sb: dict, export: dict, frames: int, manifest: Manifest) -> 
     w, h = export["width"], export["height"]
     ec = sb["end_card"]
     key = f"segment:{export['name']}:end_card"
-    hsh = stable_hash({"v": RENDER_VERSION, "ec": ec, "export": export, "frames": frames})
+    # layout 2: one drawtext per subtext line (FFmpeg 8 drawtext draws "\n" in a textfile as a box glyph)
+    hsh = stable_hash({"v": RENDER_VERSION, "ec": ec, "export": export, "frames": frames, "layout": 2})
     out = stage_dir("cuts") / export["name"] / "end_card.mp4"
     if manifest.fresh(key, hsh):
         return out
     font = find_font()
-    txt_file = stage_dir("cuts") / export["name"] / "end_card_sub.txt"
     import textwrap
-    txt_file.write_text("\n".join(textwrap.wrap(ec.get("subtext", ""), 34 if h > w else 60)), encoding="utf-8")
     title_file = stage_dir("cuts") / export["name"] / "end_card_title.txt"
     title_file.write_text(ec["text"], encoding="utf-8")
     title_size, sub_size = (h // 14, h // 40) if h <= w else (w // 9, w // 26)
-    vf = (f"drawtext=fontfile='{font}':textfile='{title_file}':fontcolor=white:fontsize={title_size}:x=(w-tw)/2:y=h*0.40,"
-          f"drawtext=fontfile='{font}':textfile='{txt_file}':fontcolor=0xE8DCC0:fontsize={sub_size}:line_spacing={sub_size // 2}:"
-          f"x=(w-tw)/2:y=h*0.40+{title_size * 1.6:.0f},fade=t=out:st={frames / FPS - 0.8:.2f}:d=0.8")
+    filters = [f"drawtext=fontfile='{font}':textfile='{title_file}':fontcolor=white:fontsize={title_size}:x=(w-tw)/2:y=h*0.40"]
+    for i, line in enumerate(textwrap.wrap(ec.get("subtext", ""), 34 if h > w else 60)):
+        line_file = stage_dir("cuts") / export["name"] / f"end_card_sub_{i}.txt"
+        line_file.write_text(line, encoding="utf-8")
+        filters.append(f"drawtext=fontfile='{font}':textfile='{line_file}':fontcolor=0xE8DCC0:fontsize={sub_size}:"
+                       f"x=(w-tw)/2:y=h*0.40+{title_size * 1.6 + i * sub_size * 1.5:.0f}")
+    filters.append(f"fade=t=out:st={frames / FPS - 0.8:.2f}:d=0.8")
+    vf = ",".join(filters)
     ffmpeg(["-f", "lavfi", "-i", f"color=c=0x1E1612:s={w}x{h}:r={FPS}", "-vf", vf, "-frames:v", frames,
             "-c:v", "libx264", "-preset", "veryfast", "-crf", "16", "-pix_fmt", "yuv420p", out])
     manifest.put(key, hsh, [out])

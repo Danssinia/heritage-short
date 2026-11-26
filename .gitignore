@@ -19,3 +19,5 @@ outputs/_kaggle/
 outputs/cuts/
 outputs/smoke/
 outputs/narration/raw/
+# final films are too large for git (about 100 MB per build); share them outside the repo
+outputs/final/heritage_*.mp4
