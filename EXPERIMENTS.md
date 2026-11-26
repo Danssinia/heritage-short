@@ -11,8 +11,8 @@ run_id or cache key, a file in `outputs/`, a measurement). Aim for ten. Keep fai
   pipeline started with.
 - **Change:** `defaults.narration.voices.narrator` Kore → Puck (commit 73dfe95); Dad stays Charon.
 - **Result (evidence):** the smoke test spoke an Amharic line with Kore (pipeline/smoke_test.py,
-  outputs/smoke/tts_amharic.wav, smoke run 20261125T194219Z-c2718f; the file is gitignored, so it is not in
-  the repository). I chose Puck because the narrator is a young man; every logged narration call uses Puck or
+  outputs/smoke/tts_amharic.wav, smoke run 20261125T194219Z-c2718f; force-added to the repository although
+  outputs/smoke/ is gitignored). I chose Puck because the narrator is a young man; every logged narration call uses Puck or
   Charon (runs.jsonl run_ids 20261125T171948Z-80c48e, 20261125T173524Z-35dc46). In user test 1 (DESIGN.md)
   brother 1 later praised the voice as natural: "it sounds so natural and human-like".
 - **Decision:** keep Puck for the narrator and Charon for Dad.
@@ -24,7 +24,8 @@ run_id or cache key, a file in `outputs/`, a measurement). Aim for ten. Keep fai
   photo references for dad, mom and me (run_id 20261125T185620Z-4f8a78: 9 images, `refs: 1`,
   `from_photo: true`), with consent recorded in ETHICS.md (commit 5d803e1).
 - **Result (evidence):** both sets in git history (outputs/references/ at commits 5d803e1 and ed9f9be).
-  TODO: how much closer the photo-based characters looked.
+  The photo-based drawings looked somewhat more like my family than the text-only ones. They are not a
+  close likeness, but they are clearly better, so I kept them.
 - **Decision:** approved photo-based references dad 2, mom 1, me 0 (commit 7811312).
 
 ### E3: Music precision on the T4
