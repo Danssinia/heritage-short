@@ -5,7 +5,15 @@ List-price equivalents use the prices in `pipeline/common/prices.py`, with their
 
 ## Per stage (paste the output of `make costs` here)
 
-TODO: paste the table after your final run.
+## Measured GPU runs (Kaggle)
+
+| Stage | Hardware / precision | Work | Time | Cost |
+|---|---|---|---|---|
+| Wan 2.2 TI2V-5B (shots) | Kaggle 2x T4, float16 | 9 clips, 640x352, 93 frames, 25 steps | 8.0 min per clip, 72 GPU-min + ~8 min setup (80 min total) | ~$0.42 list-price equivalent at $0.35/T4-hour, $0 paid |
+| ACE-Step 1.5 (music), run 1 | Kaggle T4, float16 | 9 takes (3 cues x 3) | 2.2 min generation (133 s) | $0 paid; output unusable (see FAILURES.md F4) |
+| ACE-Step 1.5 (music), run 2 | Kaggle T4, bfloat16 (chosen by probe; float32 ran out of memory) | 9 takes | 3.4 min generation (202 s) + 2.2 min load and probe | $0 paid |
+
+Run `make costs` after the final build for the full per-stage table from runs.jsonl.
 
 ## Free tiers as actually found (fill in when you hit them)
 
@@ -13,7 +21,7 @@ TODO: paste the table after your final run.
 |---|---|---|---|
 | Gemini API (TTS, text) | free tier | TODO (requests before a 429?) | TODO |
 | Cloudflare Workers AI | daily free allowance | TODO (images per day) | TODO |
-| Kaggle | about 30 GPU hours a week | TODO (queue time, minutes per Wan clip) | TODO |
+| Kaggle | about 30 GPU hours a week | 2x T4 GPUs; Wan clip 8.0 min each at 640x352; ACE-Step 9 takes in minutes | 2026-11-26 |
 
 ## Prices used for the list-price equivalent
 
